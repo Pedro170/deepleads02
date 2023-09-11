@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+/* eslint-disable import/first */
+import React from "react";
+import Footer from "./components/footer/Footer";
+import Header from "./components/header/Header";
+import HeaderLogado from "./components/header/HeaderLogado";
+import AppRoutes from "./routes/AppRoutes";
+import GlobalStyles from "./styles/globalStyle";
+import { CApp, CMain } from "./styles/tags";
 
-function App() {
+import { register } from 'swiper/element/bundle'
+register();
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+
+const App = () => {
+  const logado = localStorage.getItem('token')
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CApp>
+      <Header />
+      {logado ? <HeaderLogado /> : ''}
+      <CMain className={logado ? 'logado' : ''}>
+        <AppRoutes />
+      </CMain>
+      <Footer />
+      <GlobalStyles />
+    </CApp>
   );
 }
 
