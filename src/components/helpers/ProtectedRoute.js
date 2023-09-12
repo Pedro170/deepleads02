@@ -2,9 +2,9 @@ import React from 'react'
 import { Navigate } from 'react-router-dom'
 
 const ProtectedRoute = ({ children }) => {
-  const verificar = localStorage.getItem('token')
+  //const verificar = localStorage.getItem('token')
   
-  return verificar ? children :  <Navigate to='/home' />
+  return children 
 }
 
 export default ProtectedRoute
