@@ -16,7 +16,6 @@ export const UserStorage = ({ children }) => {
     if (usuario.token === usuarioToken) {
       setLogin(true);
       setData(usuario)
-
       navigate('/cliente/inicio');
     }
   };
@@ -28,7 +27,6 @@ export const UserStorage = ({ children }) => {
     window.localStorage.setItem("token", usuario.token);
     getUser(usuario);
     navigate('/cliente/inicio');
-    console.log('caiu aqui')
   };
 
   return (

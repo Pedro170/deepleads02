@@ -1,0 +1,21 @@
+.pagination {
+    display: flex;
+    justify-content: flex-end;
+    column-gap: .5rem;
+    width: 100%;
+    /* background: red; */
+  }
+  
+  .pagination button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transition: linear 400ms;
+    cursor: pointer;
+  }
+  
+  .pagination button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 5px 10px -1px rgba(0,0,0,0.35);
+  }
+  

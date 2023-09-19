@@ -276,8 +276,11 @@ export const BHamburger = styled.button`
   }
 `;
 
+
+
 const Header = () => {
   const [ativo, setAtivo] = React.useState(false);
+  
   return (
     <HeaderWrapper>
       <CHeader>

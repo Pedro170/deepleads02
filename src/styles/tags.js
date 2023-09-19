@@ -76,6 +76,10 @@ export const Img = styled.img`
   }
 `;
 
+export const Footer = styled.footer``
+
+export const Table = styled.table``
+
 export const Ul = styled.ul``;
 
 export const Iframe = styled.iframe``;

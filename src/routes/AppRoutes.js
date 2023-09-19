@@ -13,6 +13,7 @@ import Leads from "../pages/Leads";
 import Campanha from "../pages/Campanha";
 import NotFound from "../components/helpers/NotFound";
 import Conta from "../pages/Conta";
+import Negocio from "../pages/Negocio";
 const AppRoutes = () => {
   return (
     <Routes>
@@ -58,6 +59,15 @@ const AppRoutes = () => {
         element={
           <ProtectedRoute>
             <Conta />
+          </ProtectedRoute>
+        }
+      />
+      
+      <Route
+        path="cliente/negocio"
+        element={
+          <ProtectedRoute>
+            <Negocio />
           </ProtectedRoute>
         }
       />

@@ -34,8 +34,6 @@ const Inicio = () => {
   const mensagemGPT = async (e) => {
     e.preventDefault();
 
-    console.log(campanha);
-
     const response = await fetch(
       `http://localhost:8081/api/generative/ia/generate/ia/message?message=${campanha} com 25 palavras&apiKey=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`
     );

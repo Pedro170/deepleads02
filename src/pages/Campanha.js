@@ -14,6 +14,7 @@ import {
 } from "../styles/tags";
 import Button from "../components/form/button/Button";
 import Input, { InputGroup } from "../components/form/input/Input";
+import DataTable from "../components/dataTable/DataTable";
 
 const Campanha = () => {
   return (
@@ -98,32 +99,41 @@ const Campanha = () => {
             </Form>
           </Div>
 
+          <Section
+            style={{
+              width: "100%",
+              marginBottom: "60px",
+            }}
+          >
+            <DataTable />
+          </Section>
+
           <Box
             style={{
               width: "100%",
-              maxWidth: '1000px',
+              maxWidth: "1000px",
               borderRadius: "10px",
               background: "#CDCDCD",
               boxShadow:
                 "0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
-              padding: '1rem',
+              padding: "1rem",
             }}
           >
             <P
               style={{
-                width: 'max-content',
-                borderRadius: '10px',
-                background: '#FFF',
-                boxShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
-                color: '#25804F',
-                padding: '1rem',
-                margin: 'auto 0 2rem auto'
+                width: "max-content",
+                borderRadius: "10px",
+                background: "#FFF",
+                boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
+                color: "#25804F",
+                padding: "1rem",
+                margin: "auto 0 2rem auto",
               }}
               fontSize={1.25}
             >
-              Promoção imperdível! Feijoada completa por apenas <Br /> R$59,90! Quartas
-              e sábados, das 12:00 às 16:00. Não deixe <Br /> de experimentar essa
-              delícia!
+              Promoção imperdível! Feijoada completa por apenas <Br /> R$59,90!
+              Quartas e sábados, das 12:00 às 16:00. Não deixe <Br /> de
+              experimentar essa delícia!
             </P>
             <Div style={{ width: "100%" }}>
               <Form
@@ -131,7 +141,7 @@ const Campanha = () => {
                   display: "grid",
                   gridTemplateColumns: "1fr auto",
                   gap: "10px",
-                  padding: '0'
+                  padding: "0",
                 }}
               >
                 <InputGroup background="#fff" border="solid 1px #4B4B4B">
