@@ -14,6 +14,20 @@ export const ContainerTable = styled.div`
 const DataTable = () => {
   const [rowss, setRowss] = React.useState(null);
 
+  const handleChange = (event) => {
+    event.preventDefault();
+
+    change()
+
+    console.log('clicou')
+  }
+
+  const change = (teste) => {
+    console.log(teste)
+  }
+
+  
+
   React.useEffect(() => {
     const getLead = async () => {
       const response = await fetch(
@@ -21,8 +35,6 @@ const DataTable = () => {
       );
       const json = await response.json();
       setRowss(json);
-
-      console.log(json);
     };
     getLead();
   }, []);
@@ -46,31 +58,36 @@ const DataTable = () => {
   ];
 
   return (
-    <ContainerTable>
-      {rowss ? (
-        <DataGrid
-          className="table"
-          rows={rowss}
-          columns={columns}
-          initialState={{
-            pagination: {
-              paginationModel: { page: 0, pageSize: 5 },
-            },
-          }}
-          slots={{ toolbar: GridToolbar }}
-          slotProps={{
-            toolbar: {
-              showQuickFilter: true,
-              quickFilterProps: { debounceMs: 500 },
-            },
-          }}
-          pageSizeOptions={[5, 10]}
-          checkboxSelection
-        />
-      ) : (
-        "Sem dados"
-      )}
-    </ContainerTable>
+    <>
+      <ContainerTable>
+        {rowss ? (
+          <DataGrid
+            className="table"
+            rows={rowss}
+            columns={columns}
+            initialState={{
+              pagination: {
+                paginationModel: { page: 0, pageSize: 5 },
+              },
+            }}
+            slots={{ toolbar: GridToolbar }}
+            slotProps={{
+              toolbar: {
+                showQuickFilter: true,
+                quickFilterProps: { debounceMs: 500 },
+              },
+            }}
+            pageSizeOptions={[5, 10]}
+            checkboxSelection
+            onRowSelectionModelChange={change}
+          />
+        ) : (
+          "Carregando..."
+        )}
+      </ContainerTable>
+
+      <button onClick={handleChange}>Enivar</button>
+    </>
   );
 };
 

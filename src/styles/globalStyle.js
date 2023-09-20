@@ -40,6 +40,26 @@ const GlobalStyles = createGlobalStyle`
       font-size: 1.5rem;
     }
   }
+
+  .area-grafico {
+    width: 100%;
+    height: 300px;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    padding: 1rem;
+  }
+
+  .tr-body {
+    height: 40px;
+    background: red;
+  }
+
+
+  .paragrafo-campanha {
+    background: red;
+    color: #fff;
+  }
 `;
 
 export default GlobalStyles;

@@ -17,6 +17,13 @@ import Input, { InputGroup } from "../components/form/input/Input";
 import DataTable from "../components/dataTable/DataTable";
 
 const Campanha = () => {
+  const [teste, setTeste] = React.useState('')
+
+  function handeteste(event) {
+    event.preventDefault();
+
+    console.log(teste)
+  }
   return (
     <Section>
       <Container>
@@ -30,7 +37,7 @@ const Campanha = () => {
             <Span>Campanha</Span>
           </Paragrafo>
 
-          <Div style={{ width: "100%", maxWidth: "1000px" }}>
+          <Div style={{ width: "100%", maxWidth: "1000px", marginBottom: '3rem' }}>
             <Form
               style={{
                 display: "grid",
@@ -40,7 +47,7 @@ const Campanha = () => {
             >
               <InputGroup background="#fff" border="solid 1px #4B4B4B">
                 <Input
-                  placeholder="Nicho de busca"
+                  placeholder="Data Início"
                   cor="#2171AC"
                   corplaceholder="#2171AC"
                 />
@@ -48,7 +55,7 @@ const Campanha = () => {
 
               <InputGroup background="#fff" border="solid 1px #4B4B4B">
                 <Input
-                  placeholder="Alcance"
+                  placeholder="Data Término"
                   cor="#2171AC"
                   corplaceholder="#2171AC"
                 />
@@ -56,26 +63,7 @@ const Campanha = () => {
 
               <InputGroup background="#fff" border="solid 1px #4B4B4B">
                 <Input
-                  placeholder="Mais informações"
-                  cor="#2171AC"
-                  corplaceholder="#2171AC"
-                />
-              </InputGroup>
-            </Form>
-          </Div>
-
-          <Div style={{ width: "100%", maxWidth: "1000px" }}>
-            <Form
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-                gap: "10px",
-                marginBottom: "34px",
-              }}
-            >
-              <InputGroup background="#fff" border="solid 1px #4B4B4B">
-                <Input
-                  placeholder="Nicho de busca"
+                  placeholder="Horário"
                   cor="#2171AC"
                   corplaceholder="#2171AC"
                 />
@@ -83,15 +71,7 @@ const Campanha = () => {
 
               <InputGroup background="#fff" border="solid 1px #4B4B4B">
                 <Input
-                  placeholder="Alcance"
-                  cor="#2171AC"
-                  corplaceholder="#2171AC"
-                />
-              </InputGroup>
-
-              <InputGroup background="#fff" border="solid 1px #4B4B4B">
-                <Input
-                  placeholder="Mais informações"
+                  placeholder="Nº da Campanha"
                   cor="#2171AC"
                   corplaceholder="#2171AC"
                 />
@@ -149,6 +129,8 @@ const Campanha = () => {
                     placeholder="Digite a mensagem a ser disparada..."
                     cor="#2171AC"
                     corplaceholder="#2171AC"
+                    value={ teste }
+                    onChange={({target}) => setTeste(target.value)}
                   />
                 </InputGroup>
 
@@ -160,6 +142,8 @@ const Campanha = () => {
                     height: "40px",
                     padding: ".5rem 1.2rem",
                   }}
+
+                  onClick={handeteste}
                 />
               </Form>
             </Div>
