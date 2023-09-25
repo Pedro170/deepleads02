@@ -60,7 +60,7 @@ const Conta = () => {
                 <Input
                   placeholder="Digite em alguma palavras o que você gostaria..."
                   cor="#2171AC"
-                  corplaceholder="#2171AC"
+                  corplaceholdereholder="#2171AC"
                   type="file"
                 />
               </InputGroup>
@@ -87,7 +87,7 @@ const Conta = () => {
                 placeholder="Nome"
                 type="text"
                 cor="#4b4b4b"
-                corPlac="#4b4b4b"
+                corplaceholdereholder="#4b4b4b"
               />
             </InputGroup>
 
@@ -97,7 +97,7 @@ const Conta = () => {
                 placeholder="Telefone"
                 type="text"
                 cor="#4b4b4b"
-                corPlac="#4b4b4b"
+                corplaceholdereholder="#4b4b4b"
               />
             </InputGroup>
 
@@ -106,7 +106,7 @@ const Conta = () => {
                 placeholder="Email"
                 type="email"
                 cor="#4b4b4b"
-                corPlac="#4b4b4b"
+                corplaceholdereholder="#4b4b4b"
               />
             </InputGroup>
 
@@ -115,7 +115,7 @@ const Conta = () => {
                 placeholder="Senha"
                 type="password"
                 cor="#4b4b4b"
-                corPlac="#4b4b4b"
+                corplaceholdereholder="#4b4b4b"
               />
             </InputGroup>
 

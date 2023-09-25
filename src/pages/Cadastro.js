@@ -15,6 +15,7 @@ import Button from "../components/form/button/Button";
 import { UserContext } from '../UserContext';
 import useForm from '../hooks/useForm'
 import { USER_POST } from "../utils/Api";
+import { Navigate } from "react-router-dom";
 
 const Cadastro = () => {
   const nome = useForm();
@@ -32,13 +33,16 @@ const Cadastro = () => {
       telefone: telefone.value,
       email: email.value,
       cpf: cpf.value,
-      senha: senha.value
+      senha: senha.value,
+      endereco: []
     })
+    
     const response = await fetch(url, options)
+
+    
+
     if(response.ok) {
-      let login = email.value
-      userLogin(login, senha.value)
-      window.location.reload()
+      alert('Usuário cadastro com sucesso!!')
     }
   }
 
@@ -63,7 +67,7 @@ const Cadastro = () => {
                 placeholder="Nome"
                 type="text"
                 cor="#4b4b4b"
-                corPlac="#4b4b4b"
+                corplaceholdereholder="#4b4b4b"
                 {...nome}
               />
             </InputGroup>
@@ -74,7 +78,7 @@ const Cadastro = () => {
                 placeholder="telefone"
                 type="text"
                 cor="#4b4b4b"
-                corPlac="#4b4b4b"
+                corplaceholdereholder="#4b4b4b"
                 {...telefone}
               />
             </InputGroup>
@@ -84,7 +88,7 @@ const Cadastro = () => {
                 placeholder="Email"
                 type="email"
                 cor="#4b4b4b"
-                corPlac="#4b4b4b"
+                corplaceholdereholder="#4b4b4b"
                 {...email}
               />
             </InputGroup>
@@ -94,7 +98,7 @@ const Cadastro = () => {
                 placeholder="CPF"
                 type="text"
                 cor="#4b4b4b"
-                corPlac="#4b4b4b"
+                corplaceholdereholder="#4b4b4b"
                 {...cpf}
               />
             </InputGroup>
@@ -104,7 +108,7 @@ const Cadastro = () => {
                 placeholder="Senha"
                 type="password"
                 cor="#4b4b4b"
-                corPlac="#4b4b4b"
+                corplaceholdereholder="#4b4b4b"
                 {...senha}
               />
             </InputGroup>

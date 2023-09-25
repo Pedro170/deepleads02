@@ -1,12 +1,10 @@
 import React from "react";
 import {
   Box,
-  Br,
   CGrid,
   Container,
   Div,
   Form,
-  P,
   Paragrafo,
   Section,
   Span,
@@ -14,16 +12,81 @@ import {
 } from "../styles/tags";
 import Button from "../components/form/button/Button";
 import Input, { InputGroup } from "../components/form/input/Input";
-import DataTable from "../components/dataTable/DataTable";
+import { DataGrid, GridToolbar } from "@mui/x-data-grid";
+import styled from "styled-components";
+
+export const ContainerTable = styled.div`
+  width: 100%;
+  .table {
+    width: calc(100% - 40px);
+    margin: 0 auto;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  }
+`;
 
 const Campanha = () => {
-  const [teste, setTeste] = React.useState('')
+  const [rowss, setRowss] = React.useState(null);
+  const [data, setData] = React.useState(null);
+  const [campanha, setCampanha] = React.useState("");
 
-  function handeteste(event) {
+  React.useEffect(() => {
+    const getLead = async () => {
+      const response = await fetch(
+        `https://deepleads-api.azurewebsites.net/api/mineracao/get/leads/by-id?id=8`
+      );
+      const json = await response.json();
+      setRowss(json);
+    };
+    getLead();
+  }, []);
+
+  const columns = [
+    { field: "id", headerName: "ID", width: 70 },
+    { field: "name", headerName: "Nome", width: 230 },
+    { field: "phone", headerName: "Telefone", width: 130 },
+    { field: "category", headerName: "Categoria", type: "email", width: 130,},
+    { field: "plusCode", headerName: "PlusCode", type: "email", width: 130,},
+    { field: "place", headerName: "Endereco", type: "email", width: 230,},
+    { field: "stars", headerName: "Avaliações", type: "email", width: 130,},
+  ];
+
+  const onRowSelectionChange = (ids) => {
+    const selectedIDs = new Set(ids);
+    const linha = rowss.filter((row) => selectedIDs.has(row.id));
+    const obj = linha.map(({ name, phone, email, state, category }) => {
+      phone = "55" + phone;
+      return {name, phone, state, category}
+    });
+    setData(obj);
+  };
+
+  const handleSubmitDispararoCampanha = (event) => {
     event.preventDefault();
+    document.getElementById(
+      "conteudo"
+    ).innerHTML += `<p class="paragrafo-campanha">${campanha}</p>`;
 
-    console.log(teste)
-  }
+    fetch("https://deepleads-api.azurewebsites.net/api/whatsapp/send/message", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        dataInicio: "2023-09-17T08:00:00Z",
+        dataFim: "2023-09-18T08:00:00Z",
+        message: campanha,
+        messageType: "text",
+        phoneInitial: "5511957818539",
+        leads: data,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data))
+      .catch((error) => console.error(error));
+
+    setCampanha("");
+  };
+
   return (
     <Section>
       <Container>
@@ -37,7 +100,9 @@ const Campanha = () => {
             <Span>Campanha</Span>
           </Paragrafo>
 
-          <Div style={{ width: "100%", maxWidth: "1000px", marginBottom: '3rem' }}>
+          <Div
+            style={{ width: "100%", maxWidth: "1000px", marginBottom: "3rem" }}
+          >
             <Form
               style={{
                 display: "grid",
@@ -85,7 +150,33 @@ const Campanha = () => {
               marginBottom: "60px",
             }}
           >
-            <DataTable />
+            <ContainerTable>
+              {rowss ? (
+                <DataGrid
+                  className="table"
+                  rows={rowss}
+                  columns={columns}
+                  initialState={{
+                    pagination: {
+                      paginationModel: { page: 0, pageSize: 5 },
+                    },
+                  }}
+                  slots={{ toolbar: GridToolbar }}
+                  slotProps={{
+                    toolbar: {
+                      showQuickFilter: true,
+                      quickFilterProps: { debounceMs: 500 },
+                    },
+                  }}
+                  pageSizeOptions={[5, 10]}
+                  checkboxSelection
+                  onRowSelectionModelChange={onRowSelectionChange}
+                />
+              ) : (
+                "Carregando..."
+              )}
+
+            </ContainerTable>
           </Section>
 
           <Box
@@ -99,22 +190,7 @@ const Campanha = () => {
               padding: "1rem",
             }}
           >
-            <P
-              style={{
-                width: "max-content",
-                borderRadius: "10px",
-                background: "#FFF",
-                boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
-                color: "#25804F",
-                padding: "1rem",
-                margin: "auto 0 2rem auto",
-              }}
-              fontSize={1.25}
-            >
-              Promoção imperdível! Feijoada completa por apenas <Br /> R$59,90!
-              Quartas e sábados, das 12:00 às 16:00. Não deixe <Br /> de
-              experimentar essa delícia!
-            </P>
+            <Div id="conteudo"></Div>
             <Div style={{ width: "100%" }}>
               <Form
                 style={{
@@ -129,8 +205,8 @@ const Campanha = () => {
                     placeholder="Digite a mensagem a ser disparada..."
                     cor="#2171AC"
                     corplaceholder="#2171AC"
-                    value={ teste }
-                    onChange={({target}) => setTeste(target.value)}
+                    value={campanha}
+                    onChange={({ target }) => setCampanha(target.value)}
                   />
                 </InputGroup>
 
@@ -142,8 +218,7 @@ const Campanha = () => {
                     height: "40px",
                     padding: ".5rem 1.2rem",
                   }}
-
-                  onClick={handeteste}
+                  onClick={handleSubmitDispararoCampanha}
                 />
               </Form>
             </Div>

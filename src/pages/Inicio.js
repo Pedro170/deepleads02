@@ -1,5 +1,6 @@
 import React from "react";
 import robo from "../image/robo.png";
+import copy from "../image/copy.svg";
 import {
   BoxConversa,
   CGrid,
@@ -8,6 +9,7 @@ import {
   Div,
   Form,
   Img,
+  P,
   Paragrafo,
   Section,
   Span,
@@ -35,39 +37,20 @@ const Inicio = () => {
     e.preventDefault();
 
     const response = await fetch(
-      `http://localhost:8081/api/generative/ia/generate/ia/message?message=${campanha} com 25 palavras&apiKey=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`
+      `https://deepleads-api.azurewebsites.net/api/generative/ia/generate/ia/message?message=${campanha} com 25 palavras&apiKey=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`
     );
 
+    const conversa = document.querySelector("#conversa")
+
     const json = await response.json();
-
-    function showMessages() {
-      let historic = document.getElementById("historic");
-
-      let boxMyMessage = document.createElement("div");
-      boxMyMessage.className = "box-my-message";
-
-      let myMessage = document.createElement("p");
-      myMessage.className = "my-message";
-      myMessage.innerHTML = campanha;
-
-      boxMyMessage.appendChild(myMessage);
-      historic.appendChild(boxMyMessage);
-
-      var boxResponseMessage = document.createElement("div");
-      boxResponseMessage.className = "box-response-message";
-
-      var chatResponse = document.createElement("p");
-      chatResponse.className = "response-message";
-      chatResponse.innerHTML = json.response;
-
-      boxResponseMessage.appendChild(chatResponse);
-
-      historic.appendChild(boxResponseMessage);
-
-      historic.scrollTop = historic.scrollHeight;
-    }
-
-    showMessages();
+    
+    conversa.innerHTML += `
+      <p class="texto-conversa pergunta">${json.message}</p>
+      <p class="texto-conversa resposta">
+        <span>${json.response}</span>
+        <img src="${copy}" alt="documento" />
+      </p>
+    `
   };
 
   return (
@@ -81,7 +64,7 @@ const Inicio = () => {
           <Paragrafo style={{ marginBottom: "2rem" }}>
             Aqui você poderá interagir com uma{" "}
             <Span>inteligência artificial</Span> que será capaz de criar
-            sugestões para auxiliar você durante a criação da sua 
+            sugestões para auxiliar você durante a criação da sua
             <Span>promoção</Span>, <Span>divulgação</Span> ou{" "}
             <Span>campanha</Span>.
           </Paragrafo>
@@ -99,7 +82,9 @@ const Inicio = () => {
               <Img src={robo} alt="robo" />
             </BoxImgRobo>
             <BoxConversa>
-              <Conversa></Conversa>
+              <Conversa id="conversa">
+                
+              </Conversa>
 
               <Div style={{ width: "100%" }}>
                 <Form
@@ -115,6 +100,8 @@ const Inicio = () => {
                       placeholder="Digite em alguma palavras o que você gostaria..."
                       cor="#2171AC"
                       corplaceholder="#2171AC"
+                      value={campanha}
+                      onChange={({target}) => setCampanha(target.value)}
                     />
                   </InputGroup>
 

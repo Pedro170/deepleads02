@@ -91,6 +91,8 @@ const Leads = () => {
                 placeholder="Cidade"
                 cor="#2171AC"
                 corplaceholder="#2171AC"
+                value={cidade}
+                onChange={({target}) => setCidade(target.value)}
               />
             </InputGroup>
 
@@ -99,6 +101,8 @@ const Leads = () => {
                 placeholder="Nicho de busca"
                 cor="#2171AC"
                 corplaceholder="#2171AC"
+                value={nicho}
+                onChange={({target}) => setNicho(target.value)}
               />
             </InputGroup>
 
@@ -107,6 +111,8 @@ const Leads = () => {
                 placeholder="Alcance"
                 cor="#2171AC"
                 corplaceholder="#2171AC"
+                value={alcance}
+                onChange={({target}) => setAlcance(target.value)}
               />
             </InputGroup>
 
@@ -115,6 +121,8 @@ const Leads = () => {
                 placeholder="Mais informações"
                 cor="#2171AC"
                 corplaceholder="#2171AC"
+                value={maisInformacoes}
+                onChange={({target}) => setMaisInformacoes(target.value)}
               />
             </InputGroup>
 

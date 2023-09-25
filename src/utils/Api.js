@@ -1,5 +1,7 @@
-export const BASE_URL = "http://localhost:8081/api/auth/";
-export const BASE_MINERAR = 'http://localhost:8081/api/mineracao/generate/leads/by-id?id=1';
+export const BASE_URL = "https://deepleads-api.azurewebsites.net/api/auth/";
+export const BASE_MINERAR = 'https://deepleads-api.azurewebsites.net/api/mineracao/generate/leads/by-id?id=';
+export const BASE_CHAT = 'https://deepleads-api.azurewebsites.net/api/';
+export const BASE_LEADS = 'https://deepleads-api.azurewebsites.net/api/';
 
 export const TOKEN_POST = ( body ) => {
   return {

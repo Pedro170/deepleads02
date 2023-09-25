@@ -61,7 +61,7 @@ const Contato = () => {
                   placeholder="Email"
                   type="email"
                   cor="#4b4b4b"
-                  corPlac="#4b4b4b"
+                  corplaceholdereholder="#4b4b4b"
                 />
               </InputGroup>
 
@@ -70,7 +70,7 @@ const Contato = () => {
                   placeholder="Assunto"
                   type="text"
                   cor="#4b4b4b"
-                  corPlac="#4b4b4b"
+                  corplaceholdereholder="#4b4b4b"
                 />
               </InputGroup>
 

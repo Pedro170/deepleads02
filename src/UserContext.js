@@ -12,8 +12,9 @@ export const UserStorage = ({ children }) => {
   const navigate = useNavigate();
 
   const getUser = (usuario) => {
-    const usuarioToken = window.localStorage.getItem("token");
-    if (usuario.token === usuarioToken) {
+    const usuarioToken = window.localStorage.getItem("usuario");
+
+    if (usuario) {
       setLogin(true);
       setData(usuario)
       navigate('/cliente/inicio');
@@ -24,7 +25,7 @@ export const UserStorage = ({ children }) => {
     const { url, options } = TOKEN_POST({ login, senha });
     const response = await fetch(url, options);
     const usuario = await response.json();
-    window.localStorage.setItem("token", usuario.token);
+    window.localStorage.setItem("usuario", JSON.stringify(usuario));
     getUser(usuario);
     navigate('/cliente/inicio');
   };

@@ -13,7 +13,7 @@ const Login = () => {
   const login = useForm()
   const senha = useForm()
   const navigate = useNavigate();
-  
+
   const handleSubmit = async (event) => {
     event.preventDefault()
 
@@ -43,7 +43,7 @@ const Login = () => {
                 placeholder="Email"
                 type="email"
                 cor="#4b4b4b"
-                corPlac="#4b4b4b"
+                corplaceholdereholder="#4b4b4b"
                 {...login}
               />
             </InputGroup>
@@ -53,7 +53,7 @@ const Login = () => {
                 placeholder="Senha"
                 type="password"
                 cor="#4b4b4b"
-                corPlac="#4b4b4b"
+                corplaceholdereholder="#4b4b4b"
                 {...senha}
               />
             </InputGroup>

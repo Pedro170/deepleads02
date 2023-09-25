@@ -13,9 +13,10 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import ChatDeepleads from "./components/chat/ChatDeepleads";
 
 const App = () => {
-  const logado = localStorage.getItem('token')
+  const logado = localStorage.getItem('usuario')
 
   return (
     <CApp>
@@ -26,6 +27,7 @@ const App = () => {
       </CMain>
       <Footer />
       <GlobalStyles />
+      <ChatDeepleads />
     </CApp>
   );
 }

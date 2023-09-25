@@ -1,6 +1,7 @@
 import React from "react";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import styled from "styled-components";
+import Modal from "../helpers/modal/Modal";
 
 export const ContainerTable = styled.div`
   width: 100%;
@@ -13,20 +14,7 @@ export const ContainerTable = styled.div`
 
 const DataTable = () => {
   const [rowss, setRowss] = React.useState(null);
-
-  const handleChange = (event) => {
-    event.preventDefault();
-
-    change()
-
-    console.log('clicou')
-  }
-
-  const change = (teste) => {
-    console.log(teste)
-  }
-
-  
+  const [data, setData] = React.useState(null);
 
   React.useEffect(() => {
     const getLead = async () => {
@@ -57,6 +45,39 @@ const DataTable = () => {
     },
   ];
 
+  const onRowSelectionChange = (ids) => {
+    const selectedIDs = new Set(ids);
+    const linha = rowss.filter((row) => selectedIDs.has(row.id));
+    const obj = linha.map(({ name, phone, email, state, category }) => {
+      phone = "55" + phone;
+      return { name, email, phone };
+    });
+    setData(obj);
+  };
+
+  const handleSubmitUsuarios = (event) => {
+    event.preventDefault();
+    
+    fetch("http://localhost:8080/api/whatsapp/send/message", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        dataInicio: "2023-09-17T08:00:00Z",
+        dataFim: "2023-09-18T08:00:00Z",
+        message:
+          "Teste mensagem API DeepLeads pelo React se voce recebeu esta mensagem, desconsidere!",
+        messageType: "text",
+        phoneInitial: "5511957818539",
+        leads: data,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data))
+      .catch((error) => console.error(error));
+  };
+
   return (
     <>
       <ContainerTable>
@@ -79,14 +100,18 @@ const DataTable = () => {
             }}
             pageSizeOptions={[5, 10]}
             checkboxSelection
-            onRowSelectionModelChange={change}
+            onRowSelectionModelChange={onRowSelectionChange}
           />
         ) : (
           "Carregando..."
         )}
+
+        {data && (
+          <Modal texto="Disparo de campanha feita com sucesso!!!" />
+        )}
       </ContainerTable>
 
-      <button onClick={handleChange}>Enivar</button>
+      <button onClick={handleSubmitUsuarios}>Enivar</button>
     </>
   );
 };

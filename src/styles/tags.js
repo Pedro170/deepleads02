@@ -194,6 +194,10 @@ export const Paragrafo = styled.p`
   span {
     color: #2171ac;
   }
+
+  @media(max-width: 600px) {
+    width: initial !important;
+  }
 `;
 
 export const BoxLogin = styled.div`
