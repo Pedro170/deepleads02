@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Li, Ul } from "../../styles/tags";
+import Button from "../form/button/Button";
 
 const HeaderConteudo = styled.header`
   position: fixed;
@@ -86,6 +87,10 @@ const CHeader = styled.div`
 export const Nav = styled.nav``;
 
 const HeaderLogado = () => {
+  const userlogout = () => {
+    window.localStorage.removeItem('usuario')
+    window.location.reload()
+  }
   return (
     <HeaderConteudo>
       <CHeader>
@@ -110,6 +115,8 @@ const HeaderLogado = () => {
             <Li>
               <Link to="cliente/conta">Conta</Link>
             </Li>
+            
+            <Button style={{padding: '0.5rem'}} texto="Logout" onClick={userlogout} />
           </Ul>
         </Nav>
       </CHeader>

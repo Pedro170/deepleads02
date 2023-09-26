@@ -39,8 +39,6 @@ const Cadastro = () => {
     
     const response = await fetch(url, options)
 
-    
-
     if(response.ok) {
       alert('Usuário cadastro com sucesso!!')
     }

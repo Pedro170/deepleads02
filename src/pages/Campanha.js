@@ -29,10 +29,12 @@ const Campanha = () => {
   const [data, setData] = React.useState(null);
   const [campanha, setCampanha] = React.useState("");
 
+  const usuario = JSON.parse(window.localStorage.getItem("usuario"))
+
   React.useEffect(() => {
     const getLead = async () => {
       const response = await fetch(
-        `https://deepleads-api.azurewebsites.net/api/mineracao/get/leads/by-id?id=8`
+        `https://deepleads-api.azurewebsites.net/api/mineracao/get/leads/by-id?id=${usuario.id}`
       );
       const json = await response.json();
       setRowss(json);

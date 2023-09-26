@@ -242,6 +242,6 @@ export const Conversa = styled.div`
   }
 
   @media (max-width: 600px) {
-    padding: 1rem;
+    padding: 0;
   }
 `;

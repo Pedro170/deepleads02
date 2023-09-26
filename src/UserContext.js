@@ -16,7 +16,6 @@ export const UserStorage = ({ children }) => {
 
     if (usuario) {
       setLogin(true);
-      setData(usuario)
       navigate('/cliente/inicio');
     }
   };
@@ -26,7 +25,7 @@ export const UserStorage = ({ children }) => {
     const response = await fetch(url, options);
     const usuario = await response.json();
     window.localStorage.setItem("usuario", JSON.stringify(usuario));
-    getUser(usuario);
+    window.location.reload()
     navigate('/cliente/inicio');
   };
 
@@ -34,6 +33,7 @@ export const UserStorage = ({ children }) => {
     <UserContext.Provider
       value={{
         userLogin,
+        data
       }}
     >
       {children}

@@ -9,7 +9,6 @@ import {
   Div,
   Form,
   Img,
-  P,
   Paragrafo,
   Section,
   Span,
@@ -35,22 +34,25 @@ const Inicio = () => {
 
   const mensagemGPT = async (e) => {
     e.preventDefault();
+    const conversa = document.querySelector("#conversa");
+    conversa.innerHTML += `
+      <p class="texto-conversa pergunta">${campanha}</p>
+    `;
 
     const response = await fetch(
       `https://deepleads-api.azurewebsites.net/api/generative/ia/generate/ia/message?message=${campanha} com 25 palavras&apiKey=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`
     );
 
-    const conversa = document.querySelector("#conversa")
-
     const json = await response.json();
-    
+
     conversa.innerHTML += `
-      <p class="texto-conversa pergunta">${json.message}</p>
       <p class="texto-conversa resposta">
         <span>${json.response}</span>
         <img src="${copy}" alt="documento" />
       </p>
-    `
+    `;
+
+    setCampanha("");
   };
 
   return (
@@ -82,9 +84,7 @@ const Inicio = () => {
               <Img src={robo} alt="robo" />
             </BoxImgRobo>
             <BoxConversa>
-              <Conversa id="conversa">
-                
-              </Conversa>
+              <Conversa id="conversa"></Conversa>
 
               <Div style={{ width: "100%" }}>
                 <Form
@@ -101,7 +101,7 @@ const Inicio = () => {
                       cor="#2171AC"
                       corplaceholder="#2171AC"
                       value={campanha}
-                      onChange={({target}) => setCampanha(target.value)}
+                      onChange={({ target }) => setCampanha(target.value)}
                     />
                   </InputGroup>
 

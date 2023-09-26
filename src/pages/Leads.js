@@ -38,7 +38,7 @@ const Leads = () => {
   const [nicho, setNicho] = React.useState('')
   const [alcance, setAlcance] = React.useState('')
   const [maisInformacoes, setMaisInformacoes] = React.useState('')
-  
+
   const handleMinerar = (event) => {
     event.preventDefault();
 

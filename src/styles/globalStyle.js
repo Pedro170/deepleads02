@@ -132,6 +132,10 @@ const GlobalStyles = createGlobalStyle`
     position: relative;
     left: -60px;
     z-index: 2;
+
+    @media(max-width: 600px) {
+      left: 0;
+    }
   }
 `;
 
