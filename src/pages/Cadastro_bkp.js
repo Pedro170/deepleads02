@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../image/logo 5.png";
+import usuario from "../image/Usuario.png";
 import {
   Box,
   Br,
@@ -12,44 +12,44 @@ import {
 } from "../styles/tags";
 import Input, { InputGroup } from "../components/form/input/Input";
 import Button from "../components/form/button/Button";
-import useForm from '../hooks/useForm';
+import { UserContext } from '../UserContext';
+import useForm from '../hooks/useForm'
 import { USER_POST } from "../utils/Api";
-import { useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 const Cadastro = () => {
-  const email1 = useForm('email');
-  const email2 = useForm('email');
-  const email3 = useForm('email');
-  const email4 = useForm('email');
+  const nome = useForm();
+  const telefone = useForm();
+  const email = useForm('email');
+  const cpf = useForm();
   const senha = useForm();
 
-  const navigate = useNavigate();
+  const { userLogin } = React.useContext(UserContext)
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const { url, options } = USER_POST({
-      email1: email1.value,
-      email2: email2.value,
-      email3: email3.value,
-      email4: email4.value,
+    const {url, options} = USER_POST({
+      nome: nome.value,
+      telefone: telefone.value,
+      email: email.value,
+      cpf: cpf.value,
       senha: senha.value,
       endereco: []
-    });
+    })
+    
+    const response = await fetch(url, options)
 
-    const response = await fetch(url, options);
-
-    if (response.ok) {
-      navigate('/login'); // Redirecionar para a página de login após o cadastro bem-sucedido
-    } else {
-      console.error('Erro ao cadastrar o usuário');
+    if(response.ok) {
+      alert('Usuário cadastro com sucesso!!')
     }
   }
+
 
   return (
     <Section>
       <CGrid grid="1fr">
         <Box>
-          <Img src={logo} alt="Logo" style={{ width: "160px", marginTop: "100px" }} />
+          <Img src={usuario} alt="Usuário" style={{ width: "160px" }} />
         </Box>
         <Paragrafo margin="0">
           Crie uma conta para ter acesso a ferramentas que irão{" "}
@@ -62,41 +62,52 @@ const Cadastro = () => {
           <Form onSubmit={handleSubmit}>
             <InputGroup background="#CDCDCD">
               <Input
-                placeholder="Email 1"
-                type="email"
+                placeholder="Nome"
+                type="text"
                 cor="#4b4b4b"
-                corplaceholdereholder="#2171AC"
-                {...email1}
+                corplaceholdereholder="#4b4b4b"
+                {...nome}
               />
             </InputGroup>
 
             <InputGroup background="#CDCDCD">
               <Input
-                placeholder="Email 2"
-                type="email"
+                id="telefone"
+                placeholder="telefone"
+                type="text"
                 cor="#4b4b4b"
-                corplaceholdereholder="#2171AC"
-                {...email2}
+                corplaceholdereholder="#4b4b4b"
+                {...telefone}
               />
             </InputGroup>
 
             <InputGroup background="#CDCDCD">
               <Input
-                placeholder="Email 3"
+                placeholder="Email"
                 type="email"
                 cor="#4b4b4b"
-                corplaceholdereholder="#2171AC"
-                {...email3}
+                corplaceholdereholder="#4b4b4b"
+                {...email}
               />
             </InputGroup>
 
             <InputGroup background="#CDCDCD">
               <Input
-                placeholder="Email 4"
-                type="email"
+                placeholder="CPF"
+                type="text"
                 cor="#4b4b4b"
-                corplaceholdereholder="#2171AC"
-                {...email4}
+                corplaceholdereholder="#4b4b4b"
+                {...cpf}
+              />
+            </InputGroup>
+
+            <InputGroup background="#CDCDCD">
+              <Input
+                placeholder="Senha"
+                type="password"
+                cor="#4b4b4b"
+                corplaceholdereholder="#4b4b4b"
+                {...senha}
               />
             </InputGroup>
 

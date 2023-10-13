@@ -14,6 +14,7 @@ import Campanha from "../pages/Campanha";
 import NotFound from "../components/helpers/NotFound";
 import Conta from "../pages/Conta";
 import Negocio from "../pages/Negocio";
+import Cadastro from "../pages/Cadastro";
 const AppRoutes = () => {
   return (
     <Routes>
@@ -26,7 +27,7 @@ const AppRoutes = () => {
       <Route path="esqueceu-senha" element={<EsqueceuSenha />} />
       <Route path="contato" element={<Contato />} />
       <Route path="*" element={<NotFound />} />
-
+      <Route path="cadastro" element={<Cadastro />} />
       <Route
         path="cliente/inicio"
         element={
