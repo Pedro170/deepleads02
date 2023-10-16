@@ -20,7 +20,7 @@ const Login = () => {
   const handleSubmit = async (event) => {
     event.preventDefault()
 
-    if(login.validacao && senha.validacao) {
+    if (login.validacao && senha.validacao) {
       userLogin(login.value, senha.value)
       navigate('/cliente/inicio');
     }
@@ -33,7 +33,7 @@ const Login = () => {
       <img src={SVGTopLeft} alt="Top Left SVG" style={{ position: "absolute", top: 0, left: 0, width: '350px', height: '350px' }} />
       <CGrid grid="repeat(2, 1fr)" alignItems="center" padding="0" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <BoxLogin type="first" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', background: "#fff" }}>
-          <img src={Logo} alt="Logo" />
+          <img src={Logo} alt="Logo" style={{ width: "727px" }} />
           <P type="branco" fontSize="1.25" textAlign="center" mt="2" mb="2" style={{ color: "#4D4D4D" }}>
             Entre em sua conta para ter <Br /> acesso a todo o potencial deepleads
           </P>
@@ -64,7 +64,7 @@ const Login = () => {
               fontWeight="550"
               type="second"
               color="#fff"
-              style={{ marginBottom: '50px' }}
+              style={{ marginBottom: '50px',width: '128px' ,marginLeft: '63px' }}
             />
           </Form>
 

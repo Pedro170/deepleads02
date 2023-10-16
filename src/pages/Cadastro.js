@@ -39,75 +39,88 @@ const Cadastro = () => {
     const response = await fetch(url, options);
 
     if (response.ok) {
-      navigate('/login'); // Redirecionar para a página de login após o cadastro bem-sucedido
+      navigate('/login'); // Redirect to the login page after successful registration
     } else {
-      console.error('Erro ao cadastrar o usuário');
+      console.error('Error registering the user');
     }
   }
 
   return (
-    <Section>
-      <CGrid grid="1fr">
+    <Section style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      <CGrid grid="1fr 1fr">
         <Box>
-          <Img src={logo} alt="Logo" style={{ width: "160px", marginTop: "100px" }} />
+        <div className="left-side" style={{ marginTop: "-62px", marginLeft: "52px" }}>
+            <div className="image-container" style={{ marginLeft: '272px' }}>
+              <Img src={logo} alt="Logo" style={{ width: "160px", marginTop: "100px" }} />
+            </div>
+            <div className="text-container" style={{ marginLeft: '161px' }}>
+              <Paragrafo margin="0" style={{ textAlign: 'center' }}>
+                Crie uma conta para ter acesso<Br /> a ferramentas que irão{" "}
+                <Span>
+                  transformar <Br /> o seu negócio
+                </Span>
+              </Paragrafo>
+            </div>
+            <div className="form" style={{ marginLeft: '200px', marginTop: '-12px' }}>
+              <Form onSubmit={handleSubmit}>
+                <InputGroup background="#CDCDCD">
+                  <Input
+                    placeholder="Email 1"
+                    type="email"
+                    cor="#2171AC"
+                    corplaceholder="#2171AC"
+                    style={{ width: "294px" }}
+                    {...email1}
+                  />
+                </InputGroup>
+                <InputGroup background="#CDCDCD">
+                  <Input
+                    placeholder="Email 2"
+                    type="email"
+                    cor="#2171AC"
+                    corplaceholder="#2171AC"
+                    style={{ width: "294px" }}
+                    {...email2}
+                  />
+                </InputGroup>
+                <InputGroup background="#CDCDCD">
+                  <Input
+                    placeholder="Email 3"
+                    type="email"
+                    cor="#2171AC"
+                    corplaceholder="#2171AC"
+                    style={{ width: "294px" }}
+                    {...email3}
+                  />
+                </InputGroup>
+                <InputGroup background="#CDCDCD">
+                  <Input
+                    placeholder="Email 4"
+                    type="email"
+                    cor="#2171AC"
+                    corplaceholder="#2171AC"
+                    style={{ width: "294px" }}
+                    {...email4}
+                  />
+                </InputGroup>
+                <Button
+                  texto="Cadastrar"
+                  fontWeight="550"
+                  type="first"
+                  color="#fff"
+                  style={{ width: "173px", marginLeft: '50px' }}
+                />
+              </Form>
+            </div>
+          </div>
         </Box>
-        <Paragrafo margin="0">
-          Crie uma conta para ter acesso a ferramentas que irão{" "}
-          <Span>
-            transformar <Br /> o seu negócio
-          </Span>
-        </Paragrafo>
-
-        <Box>
-          <Form onSubmit={handleSubmit}>
-            <InputGroup background="#CDCDCD">
-              <Input
-                placeholder="Email 1"
-                type="email"
-                cor="#4b4b4b"
-                corplaceholdereholder="#2171AC"
-                {...email1}
-              />
-            </InputGroup>
-
-            <InputGroup background="#CDCDCD">
-              <Input
-                placeholder="Email 2"
-                type="email"
-                cor="#4b4b4b"
-                corplaceholdereholder="#2171AC"
-                {...email2}
-              />
-            </InputGroup>
-
-            <InputGroup background="#CDCDCD">
-              <Input
-                placeholder="Email 3"
-                type="email"
-                cor="#4b4b4b"
-                corplaceholdereholder="#2171AC"
-                {...email3}
-              />
-            </InputGroup>
-
-            <InputGroup background="#CDCDCD">
-              <Input
-                placeholder="Email 4"
-                type="email"
-                cor="#4b4b4b"
-                corplaceholdereholder="#2171AC"
-                {...email4}
-              />
-            </InputGroup>
-
-            <Button
-              texto="Cadastrar"
-              fontWeight="550"
-              type="first"
-              color="#fff"
-            />
-          </Form>
-        </Box>
+        <div className="right-side" style={{ marginLeft: '200px', marginTop: '-12px' }}>
+          <svg width="650" height="650" viewBox="0 0 1040 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 1080V926H62V771H87V617H309V463H257V309H112V154H72V0H1040V1080H0Z" fill="#2171AC" />
+            <path d="M428 1080H575V926H385V771H318V617H244V463H557V309H416V154H605V0H1040V1080H428Z" fill="#134F7B" />
+            <path d="M559 1080H858V926H714V771H546V617H713V463H672V309H707V154H828V0H1040V1080H559Z" fill="#07304D" />
+          </svg>
+        </div>
       </CGrid>
     </Section>
   );
