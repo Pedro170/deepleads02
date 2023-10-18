@@ -1,18 +1,59 @@
 import styled from "styled-components";
 
+
+
 export const ContainerGrid = styled.div`
   background: linear-gradient(
     107deg,
     #3474a3 25.31%,
     rgba(35, 126, 193, 0.58) 69.54%
   );
-  box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.25) inset;
   padding: 45px 0;
 
   h1 {
     text-align: center;
     font-weight: normal;
   }
+
+  h2 .svg-icon {
+    content: url('../../image/home/linhaSvg.png');
+    position: absolute;
+    bottom: -20px; /* Ajuste a posição vertical conforme necessário */
+    left: 50%; /* Centralize horizontalmente */
+    transform: translateX(-50%); /* Centralize horizontalmente */
+    width: 50px; /* Defina a largura do SVG conforme necessário */
+    height: 50px; /* Defina a altura do SVG conforme necessário */
+    background: url('caminho-para-o-seu-arquivo-svg.svg') no-repeat; /* Substitua pelo caminho correto para o seu SVG */
+    background-size: cover;
+}
+`;
+
+export const ContainerGrid2 = styled.div`
+  background: #4EA3E2;
+  padding: 45px 0;
+
+  h1 {
+    text-align: center;
+    font-weight: normal;
+    
+  }
+
+  h3 {
+    text-align: start;
+    font-weight: bolder;
+    color: white;
+    width: 250px;
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+
+  p {
+    color: #FFF;
+    width: 300px;
+    font-size: 18px;
+  }
+
+  
 `;
 
 export const ItemGrid = styled.div`
