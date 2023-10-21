@@ -28,7 +28,7 @@ import computaGrafHome from "../../image/home/computagrafhome.png"
 
 export const DivInfo = styled.div`
   width: 16.25rem;
-  height: 10rem;
+  padding: 2rem;
   flex-shrink: 0;
   border-radius: 0.384rem;
   background: #FFF;
@@ -59,7 +59,6 @@ export const DivInfo = styled.div`
 export const DivCards = styled.div`
 display: flex;
 width: 25.313rem;
-height: 42.875rem;
 flex-direction: column;
 align-items: center;
 gap: 2.337rem;
@@ -68,7 +67,7 @@ border-radius: 0.313rem;
 border: 1px solid #FFF;
 background: #78C6FF;
 justify-content: center;
-padding: 1.25rem;
+padding: 3rem;
 `;
 
 export const DivReasons = styled.div`
