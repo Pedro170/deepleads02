@@ -9,23 +9,13 @@ export const ContainerGrid = styled.div`
     rgba(35, 126, 193, 0.58) 69.54%
   );
   padding: 45px 0;
+  margin-bottom: 50px;
 
   h1 {
     text-align: center;
     font-weight: normal;
   }
 
-  h2 .svg-icon {
-    content: url('../../image/home/linhaSvg.png');
-    position: absolute;
-    bottom: -20px; /* Ajuste a posição vertical conforme necessário */
-    left: 50%; /* Centralize horizontalmente */
-    transform: translateX(-50%); /* Centralize horizontalmente */
-    width: 50px; /* Defina a largura do SVG conforme necessário */
-    height: 50px; /* Defina a altura do SVG conforme necessário */
-    background: url('caminho-para-o-seu-arquivo-svg.svg') no-repeat; /* Substitua pelo caminho correto para o seu SVG */
-    background-size: cover;
-}
 `;
 
 export const ContainerGrid2 = styled.div`

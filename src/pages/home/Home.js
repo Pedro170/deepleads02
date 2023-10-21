@@ -27,21 +27,21 @@ import celularHome from "../../image/home/celularhome.png"
 import computaGrafHome from "../../image/home/computagrafhome.png"
 
 export const DivInfo = styled.div`
-  width: 260px;
-  height: 160px;
+  width: 16.25rem;
+  height: 10rem;
   flex-shrink: 0;
-  border-radius: 6.14px;
+  border-radius: 0.384rem;
   background: #FFF;
   box-shadow: 0px 10px 30px 2px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 77px;
+  margin-bottom: 4.813rem;
 
   & h1 {
     color: #388DCC;
-    font-size: 48px;
+    font-size: 3rem;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -49,7 +49,7 @@ export const DivInfo = styled.div`
 
   & p {
     color: #A7A7A7;
-    font-size: 18px;
+    font-size: 1.125rem;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -58,26 +58,63 @@ export const DivInfo = styled.div`
 
 export const DivCards = styled.div`
 display: flex;
-width: 405px;
-height: 686px;
+width: 25.313rem;
+height: 42.875rem;
 flex-direction: column;
 align-items: center;
-gap: 37.394px;
+gap: 2.337rem;
 flex-shrink: 0;
-border-radius: 5px;
+border-radius: 0.313rem;
 border: 1px solid #FFF;
 background: #78C6FF;
 justify-content: center;
-padding: 20px;
+padding: 1.25rem;
 `;
 
 export const DivReasons = styled.div`
 display: flex;
-width: 327px;
+width: 20.438rem;
 flex-direction: column;
 justify-content: center;
-padding: 10px;
+padding: 0.625rem;
 text-align: start;
+`;
+
+export const DivContent = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr; // Define duas colunas
+  place-items: center;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: 1fr; 
+
+  }
+`;
+
+export const DivSectionCards = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; // Define três colunas
+
+  @media (max-width: 1350px) {
+    grid-template-columns: 1fr 1fr; 
+  }
+`;
+
+export const DivSectionReasons = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; 
+  padding: 1.25rem;
+  margin-top: 0.625rem;
+  margin-bottom: 0.625rem;
+  place-items: center;
+  grid-gap: 0.625rem;
+
+  @media (max-width: 1350px) {
+    grid-template-columns: 1fr 1fr; 
+    grid-gap: 2rem;
+    margin-top: 1.5rem;
+    padding: 2rem;
+  }
 `;
 
 
@@ -88,30 +125,22 @@ const Home = () => {
 
       <ContainerGrid style={{
         background: '#F8FCFF',
-        height: '575px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        marginBottom: '48px'
       }}>
-        <Div style={{
-          display: 'flex',
-          flexDirection: 'row',
-          alignItems: 'center',
-          justifyContent: 'center'
-        }}>
-
+        <DivContent>
           <Div >
-            <H1 style={{ textAlign: 'start', marginBottom: '16px', fontSize: '35px', fontWeight: 'bold' }}>Encontre novos clientes para seu negócio</H1>
-            <H2 style={{ fontWeight: 'bolder', marginBottom: '16px', fontSize: '33px', position: 'relative', }}>Gerencie, converta e qualifique seus Leads </H2>
-            <P style={{ marginBottom: '16px' }}>Plataforma que conecta seu negócio com outras empresas</P>
+            <H1 style={{ textAlign: 'start', marginBottom: '1rem', fontSize: '2.188', fontWeight: 'bold' }}>Encontre novos clientes para seu negócio</H1>
+            <H2 style={{ fontWeight: 'bolder', marginBottom: '1rem', fontSize: '2.188', position: 'relative', }}>Gerencie, converta e qualifique seus Leads </H2>
+            <P style={{ marginBottom: '1rem' }}>Plataforma que conecta seu negócio com outras empresas</P>
             <Div style={{
               background: '#4EA3E2',
-              borderRadius: '10px',
-              padding: '10px',
+              borderRadius: '0.625rem',
+              padding: '0.625rem',
               width: 'auto',
               display: 'inline-block',
-              marginBottom: '31px'
+              marginBottom: '1.938rem'
             }}>
               <P style={{
                 color: 'white'
@@ -120,7 +149,7 @@ const Home = () => {
 
             <Div style={{
               display: 'flex',
-              gap: '17px'
+              gap: '1.063rem'
             }}>
               <Button
                 texto="REALIZAR DEMONSTRAÇÃO"
@@ -128,8 +157,8 @@ const Home = () => {
                 type="first"
                 color="#fff"
                 style={{
-                  marginBottom: "50px",
-                  borderRadius: "50px",
+                  marginBottom: "3.125rem",
+                  borderRadius: "3.125rem",
                   background: '#388DCC'
                 }}
               />
@@ -139,8 +168,8 @@ const Home = () => {
                 type="first"
                 color="#CFD0D0"
                 style={{
-                  marginBottom: "50px",
-                  borderRadius: "50px",
+                  marginBottom: "3.125rem",
+                  borderRadius: "3.125rem",
                   background: '#FFFFFF',
                 }}
               />
@@ -148,12 +177,12 @@ const Home = () => {
           </Div>
           <Div>
             <Img src={pcHome} alt="pc com logo dentro" style={{
-              width: '735px',
-              height: '551px'
+              maxWidth: '100%',
+              maxHeigh: '100%'
             }} />
           </Div>
 
-        </Div>
+        </DivContent>
       </ContainerGrid>
 
       <Container>
@@ -161,7 +190,7 @@ const Home = () => {
         <Div style={{
           display: 'flex',
           flexDirection: 'row',
-          gap: '30px'
+          gap: '1.875rem'
         }}>
           <DivInfo>
             <H1>116M</H1>
@@ -187,75 +216,72 @@ const Home = () => {
       </Container>
 
       <Div style={{
-        marginBottom: '20px',
+        marginBottom: '1.25rem',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
       }}>
         <Div style={{
           textAlign: 'center'
         }}>
           <P style={{
-            fontSize: '30px',
+            fontSize: '1.875rem',
             fontStyle: 'normal',
             fontWeight: '500'
           }}>Seu negócio com</P>
           <P style={{
             color: '#388DCC',
-            fontSize: '30px',
+            fontSize: '1.875rem',
             fontStyle: 'normal',
             fontWeight: '700'
           }}>Inteligência Artificial nas campanhas</P>
         </Div>
 
-        <Div style={{
-          display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'center',
-          alignItems: 'center',
-
-        }}>
+        <DivContent>
           <Img src={notebookHome} alt="notebook com informações" />
-          <Div style={{ width: '800px' }}>
-            <H1 style={{ fontSize: '36px', marginBottom: '29px', fontWeight: 'normal' }}>Converta leads com <Span style={{ fontWeight: 'bold' }}>campanhas</Span></H1>
-            <P style={{ fontSize: '29px' }}>Use o poder da <Span style={{ color: '#2171ac' }}>inteligencia artificial (ChatGPT)</Span> para gerar novas campanhas para sua base de clientes, totalmente incluso no plano e <Span style={{ color: '#2171ac' }}>sem uma equipe especializada de marketing.</Span></P>
+          <Div style={{ width: '50rem' }}>
+            <H1 style={{ fontSize: '2.25rem', marginBottom: '1.813rem', fontWeight: 'normal' }}>Converta leads com <Span style={{ fontWeight: 'bold' }}>campanhas</Span></H1>
+            <P style={{ fontSize: '1.813rem' }}>Use o poder da <Span style={{ color: '#2171ac' }}>inteligencia artificial (ChatGPT)</Span> para gerar novas campanhas para sua base de clientes, totalmente incluso no plano e <Span style={{ color: '#2171ac' }}>sem uma equipe especializada de marketing.</Span></P>
           </Div>
-        </Div>
+        </DivContent>
       </Div>
 
       <Div style={{
         background: 'linear-gradient(180deg, #FDFDFD 77.35%, rgba(245, 245, 245, 0.76) 158.57%)',
-        height: '788px',
-      }}>
-        <Div style={{
         display: 'flex',
-        flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: '30px'
+        padding: '2rem',
+        marginTop: '4rem'
       }}>
-        <Div style={{ width: '800px'}}>
-          <H1 style={{ fontSize: '36px', marginBottom: '29px', fontWeight: 'normal' }}>Encontre potenciais clientes</H1>
-          <P style={{ fontSize: '29px' }}>Aumente sua <Span style={{ color: '#2171ac' }}>base de Leads.</Span> nossa ferramenta encontra <Span style={{ color: '#2171ac' }}>potenciais clientes</Span> para seu negocio, <Span style={{ color: '#2171ac' }}>filtre por regiões de interesse</Span>, nicho de mercado e reputação.</P>
-        </Div>
-        <Img src={celularHome} alt="celular com informações" />
-        </Div>
+        <DivContent style={{
+          marginTop: '4rem'
+        }}>
+          <Div style={{ width: '50rem' }}>
+            <H1 style={{ fontSize: '2.25rem', marginBottom: '1.813rem', fontWeight: 'normal' }}>Encontre potenciais clientes</H1>
+            <P style={{ fontSize: '1.813rem' }}>Aumente sua <Span style={{ color: '#2171ac' }}>base de Leads.</Span> nossa ferramenta encontra <Span style={{ color: '#2171ac' }}>potenciais clientes</Span> para seu negocio, <Span style={{ color: '#2171ac' }}>filtre por regiões de interesse</Span>, nicho de mercado e reputação.</P>
+          </Div>
+          <Img src={celularHome} alt="celular com informações"/>
+        </DivContent>
       </Div>
 
       <Div style={{
         display: 'flex',
-        flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-
+        padding: '2rem',
+        marginBottom: '4rem'
       }}>
-        <Img src={computaGrafHome} alt="computador com graficos" />
-        <Div style={{ width: '800px' }}>
-          <H1 style={{ fontSize: '36px', marginBottom: '29px', fontWeight: 'normal' }}>Resultados em Tempo Real</H1>
-          <P style={{ fontSize: '29px' }}>Dashboard de métricas para acompanhar sua performance, <Span style={{ color: '#2171ac' }}>sem depender de planilhas ou trabalho manual.</Span>
-            Integre suas <Span style={{ color: '#2171ac' }}>Campanhas</Span> com um clique e aumente a performance de <Span style={{ color: '#2171ac' }}>seus anúncios.</Span></P>
-        </Div>
+        <DivContent>
+          <Img src={computaGrafHome} alt="computador com graficos" />
+          <Div style={{ width: '50rem' }}>
+            <H1 style={{ fontSize: '2.25rem', marginBottom: '1.813rem', fontWeight: 'normal' }}>Resultados em Tempo Real</H1>
+            <P style={{ fontSize: '1.813rem' }}>Dashboard de métricas para acompanhar sua performance, <Span style={{ color: '#2171ac' }}>sem depender de planilhas ou trabalho manual.</Span>
+              Integre suas <Span style={{ color: '#2171ac' }}>Campanhas</Span> com um clique e aumente a performance de <Span style={{ color: '#2171ac' }}>seus anúncios.</Span></P>
+          </Div>
+
+        </DivContent>
       </Div>
 
       <Div style={{
@@ -263,54 +289,42 @@ const Home = () => {
         alignItems: 'center',
         justifyContent: 'center',
         flexDirection: 'column',
-        gap: '40px',
-        marginBottom: '80px'
+        gap: '2.5rem',
+        marginBottom: '5rem'
       }}>
         <Div style={{ textAlign: 'center' }}>
-          <P style={{ fontSize: '30px' }}>Agregando valor ao</P>
-          <P style={{ fontSize: '32px', color: '#2171ac' }}>Seus Clientes e em Seu Negócio</P>
+          <P style={{ fontSize: '1.875rem' }}>Agregando valor ao</P>
+          <P style={{ fontSize: '2rem', color: '#2171ac' }}>Seus Clientes e em Seu Negócio</P>
         </Div>
 
-        <Div style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center'
-        }}>
+        <DivSectionCards>
           <DivCards>
             <Img src={rostoRobo} alt="rosto de um robo" />
-            <H1 style={{ color: 'white', fontSize: '30px' }}>Chatbot</H1>
-            <P style={{ color: 'white', fontSize: '24px' }}>Com valores baixos e acessíveis, você poderá ter acesso a uma plataforma moderna e super prática que irá revolucionar e impusionar suas vendas e até seu negócio/network...</P>
+            <H1 style={{ color: 'white', fontSize: '1.875rem' }}>Chatbot</H1>
+            <P style={{ color: 'white', fontSize: '1.5rem' }}>Com valores baixos e acessíveis, você poderá ter acesso a uma plataforma moderna e super prática que irá revolucionar e impusionar suas vendas e até seu negócio/network...</P>
           </DivCards>
 
           <DivCards style={{ background: '#4EA3E2' }}>
             <Img src={metas} alt="rosto de um robo" />
-            <H1 style={{ color: 'white', fontSize: '30px' }}>Métricas em tempo real</H1>
-            <P style={{ color: 'white', fontSize: '24px' }}>Com valores baixos e acessíveis, você poderá ter acesso a uma plataforma moderna e super prática que irá revolucionar e impusionar suas vendas e até seu negócio/network...</P>
+            <H1 style={{ color: 'white', fontSize: '1.875rem' }}>Métricas em tempo real</H1>
+            <P style={{ color: 'white', fontSize: '1.5rem' }}>Com valores baixos e acessíveis, você poderá ter acesso a uma plataforma moderna e super prática que irá revolucionar e impusionar suas vendas e até seu negócio/network...</P>
           </DivCards>
 
           <DivCards style={{ background: '#2171ac' }}>
             <Img src={cifrao} alt="rosto de um robo" />
-            <H1 style={{ color: 'white', fontSize: '30px' }}>Valores Acessiveis</H1>
-            <P style={{ color: 'white', fontSize: '24px' }}>Com valores baixos e acessíveis, você poderá ter acesso a uma plataforma moderna e super prática que irá revolucionar e impusionar suas vendas e até seu negócio/network...</P>
+            <H1 style={{ color: 'white', fontSize: '1.875rem' }}>Valores Acessiveis</H1>
+            <P style={{ color: 'white', fontSize: '1.5rem' }}>Com valores baixos e acessíveis, você poderá ter acesso a uma plataforma moderna e super prática que irá revolucionar e impusionar suas vendas e até seu negócio/network...</P>
           </DivCards>
 
 
-        </Div>
+        </DivSectionCards>
       </Div>
 
       <ContainerGrid2>
-        <H2 style={{textAlign: 'center', color: 'white', fontWeight: 'normal', fontSize: '32px'}}>Algumas razões do</H2>
-        <H1 style={{textAlign: 'center', color: 'white', fontWeight: 'bold', fontSize: '35px'}}> Porque nos escolher</H1>
+        <H2 style={{ textAlign: 'center', color: 'white', fontWeight: 'normal', fontSize: '2rem' }}>Algumas razões do</H2>
+        <H1 style={{ textAlign: 'center', color: 'white', fontWeight: 'bold', fontSize: '2rem' }}> Porque nos escolher</H1>
 
-        <Div style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr 1fr',
-          padding: '20px',
-          marginTop: '10px',
-          marginBottom: '10px',
-          placeItems: 'center',
-          gridGap: '10px'
-        }}>
+        <DivSectionReasons>
           <DivReasons>
             <H3>Plataforma de alta performance</H3>
 
@@ -346,10 +360,10 @@ const Home = () => {
 
             <P>Resultados rápidos e uma plataforma intuitiva, prática e eficiente </P>
           </DivReasons>
-        </Div>
+        </DivSectionReasons>
       </ContainerGrid2>
 
-      
+
     </Section >
   );
 };
