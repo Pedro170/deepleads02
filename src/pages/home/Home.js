@@ -114,6 +114,10 @@ export const DivSectionReasons = styled.div`
     margin-top: 1.5rem;
     padding: 2rem;
   }
+
+  @media (max-width: 490px) {
+    grid-template-columns: 1fr; 
+  }
 `;
 
 
@@ -129,9 +133,9 @@ const Home = () => {
         justifyContent: 'center',
       }}>
         <DivContent>
-          <Div >
-            <H1 style={{ textAlign: 'start', marginBottom: '1rem', fontSize: '2.188', fontWeight: 'bold' }}>Encontre novos clientes para seu negócio</H1>
-            <H2 style={{ fontWeight: 'bolder', marginBottom: '1rem', fontSize: '2.188', position: 'relative', }}>Gerencie, converta e qualifique seus Leads </H2>
+          <Div>
+            <H1 style={{ textAlign: 'start', marginBottom: '1rem', fontWeight: 'bold' }}>Encontre novos clientes para seu negócio</H1>
+            <H2 style={{ fontWeight: 'bolder', marginBottom: '1rem', position: 'relative' }}>Gerencie, converta e qualifique seus Leads </H2>
             <P style={{ marginBottom: '1rem' }}>Plataforma que conecta seu negócio com outras empresas</P>
             <Div style={{
               background: '#4EA3E2',
@@ -180,15 +184,16 @@ const Home = () => {
               maxHeigh: '100%'
             }} />
           </Div>
-
         </DivContent>
+
       </ContainerGrid>
 
       <Container>
-
         <Div style={{
           display: 'flex',
           flexDirection: 'row',
+          flexWrap: 'wrap', // Permite que os elementos quebrem para a próxima linha quando não couberem na tela
+          justifyContent: 'center', // Alinha os elementos ao centro
           gap: '1.875rem'
         }}>
           <DivInfo>
@@ -210,9 +215,9 @@ const Home = () => {
             <H1>81NH1S</H1>
             <P>Ganhos mensais</P>
           </DivInfo>
-
         </Div>
       </Container>
+
 
       <Div style={{
         marginBottom: '1.25rem',
@@ -220,104 +225,115 @@ const Home = () => {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
+        textAlign: 'center',
+        padding: '1rem'
       }}>
-        <Div style={{
-          textAlign: 'center'
-        }}>
-          <P style={{
-            fontSize: '1.875rem',
-            fontStyle: 'normal',
-            fontWeight: '500'
-          }}>Seu negócio com</P>
-          <P style={{
-            color: '#388DCC',
-            fontSize: '1.875rem',
-            fontStyle: 'normal',
-            fontWeight: '700'
-          }}>Inteligência Artificial nas campanhas</P>
-        </Div>
+        <P style={{
+          fontSize: '1.5rem',
+          fontStyle: 'normal',
+          fontWeight: '500'
+        }}>Seu negócio com</P>
+        <P style={{
+          color: '#388DCC',
+          fontSize: '1.5rem',
+          fontStyle: 'normal',
+          fontWeight: '700'
+        }}>Inteligência Artificial nas campanhas</P>
 
         <DivContent>
-          <Img src={notebookHome} alt="notebook com informações" />
-          <Div style={{ width: '50rem' }}>
-            <H1 style={{ fontSize: '2.25rem', marginBottom: '1.813rem', fontWeight: 'normal' }}>Converta leads com <Span style={{ fontWeight: 'bold' }}>campanhas</Span></H1>
-            <P style={{ fontSize: '1.813rem' }}>Use o poder da <Span style={{ color: '#2171ac' }}>inteligencia artificial (ChatGPT)</Span> para gerar novas campanhas para sua base de clientes, totalmente incluso no plano e <Span style={{ color: '#2171ac' }}>sem uma equipe especializada de marketing.</Span></P>
+          <Img src={notebookHome} alt="notebook com informações" style={{ maxWidth: '100%' }} />
+          <Div style={{ maxWidth: '100%', padding: '1rem' }}>
+            <H1 style={{ fontSize: '2rem', marginBottom: '1rem', fontWeight: 'normal' }}>Converta leads com <Span style={{ fontWeight: 'bold' }}>campanhas</Span></H1>
+            <P style={{ fontSize: '1rem' }}>
+              Use o poder da <Span style={{ color: '#2171ac' }}>inteligência artificial (ChatGPT)</Span> para gerar novas campanhas para sua base de clientes, totalmente incluso no plano e <Span style={{ color: '#2171ac' }}>sem uma equipe especializada de marketing.</Span>
+            </P>
           </Div>
         </DivContent>
       </Div>
+
 
       <Div style={{
         background: 'linear-gradient(180deg, #FDFDFD 77.35%, rgba(245, 245, 245, 0.76) 158.57%)',
         display: 'flex',
+        flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
         padding: '2rem',
-        marginTop: '4rem'
+        marginTop: '4rem',
       }}>
         <DivContent style={{
-          marginTop: '4rem'
+          marginTop: '2rem',
         }}>
-          <Div style={{ width: '50rem' }}>
+          <Div style={{ maxWidth: '50rem', padding: '1rem' }}>
             <H1 style={{ fontSize: '2.25rem', marginBottom: '1.813rem', fontWeight: 'normal' }}>Encontre potenciais clientes</H1>
-            <P style={{ fontSize: '1.813rem' }}>Aumente sua <Span style={{ color: '#2171ac' }}>base de Leads.</Span> nossa ferramenta encontra <Span style={{ color: '#2171ac' }}>potenciais clientes</Span> para seu negocio, <Span style={{ color: '#2171ac' }}>filtre por regiões de interesse</Span>, nicho de mercado e reputação.</P>
+            <P style={{ fontSize: '1.813rem' }}>
+              Aumente sua <Span style={{ color: '#2171ac' }}>base de Leads.</Span> nossa ferramenta encontra <Span style={{ color: '#2171ac' }}>potenciais clientes</Span> para seu negocio, <Span style={{ color: '#2171ac' }}>filtre por regiões de interesse</Span>, nicho de mercado e reputação.
+            </P>
           </Div>
-          <Img src={celularHome} alt="celular com informações"/>
+          <Img src={celularHome} alt="celular com informações" style={{ maxWidth: '100%' }} />
         </DivContent>
       </Div>
+
 
       <Div style={{
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         padding: '2rem',
-        marginBottom: '4rem'
+        marginBottom: '4rem',
+        flexDirection: 'column', // Alterando a direção para uma coluna em telas menores
+        textAlign: 'center' // Centralizando o texto
       }}>
         <DivContent>
-          <Img src={computaGrafHome} alt="computador com graficos" />
-          <Div style={{ width: '50rem' }}>
+          <Img src={computaGrafHome} alt="computador com gráficos" />
+          <Div style={{ maxWidth: '100%', padding: '0 1rem' }}> {/* Definindo uma largura máxima */}
             <H1 style={{ fontSize: '2.25rem', marginBottom: '1.813rem', fontWeight: 'normal' }}>Resultados em Tempo Real</H1>
             <P style={{ fontSize: '1.813rem' }}>Dashboard de métricas para acompanhar sua performance, <Span style={{ color: '#2171ac' }}>sem depender de planilhas ou trabalho manual.</Span>
               Integre suas <Span style={{ color: '#2171ac' }}>Campanhas</Span> com um clique e aumente a performance de <Span style={{ color: '#2171ac' }}>seus anúncios.</Span></P>
           </Div>
-
         </DivContent>
       </Div>
 
+
       <Div style={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        flexDirection: 'column',
-        gap: '2.5rem',
-        marginBottom: '5rem'
-      }}>
-        <Div style={{ textAlign: 'center' }}>
-          <P style={{ fontSize: '1.875rem' }}>Agregando valor ao</P>
-          <P style={{ fontSize: '2rem', color: '#2171ac' }}>Seus Clientes e em Seu Negócio</P>
-        </Div>
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  flexDirection: 'column',
+  gap: '2.5rem',
+  marginBottom: '5rem'
+}}>
+  <Div style={{ textAlign: 'center' }}>
+    <P style={{ fontSize: '1.875rem' }}>Agregando valor ao</P>
+    <P style={{ fontSize: '2rem', color: '#2171ac' }}>Seus Clientes e em Seu Negócio</P>
+  </Div>
 
-        <DivSectionCards>
-          <DivCards>
-            <Img src={rostoRobo} alt="rosto de um robo" />
-            <H1 style={{ color: 'white', fontSize: '1.875rem' }}>Chatbot</H1>
-            <P style={{ color: 'white', fontSize: '1.5rem' }}>Com valores baixos e acessíveis, você poderá ter acesso a uma plataforma moderna e super prática que irá revolucionar e impusionar suas vendas e até seu negócio/network...</P>
-          </DivCards>
+  <DivSectionCards style={{
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    gap: '2rem',
+  }}>
+    <DivCards>
+      <Img src={rostoRobo} alt="rosto de um robô" />
+      <H1 style={{ color: 'white', fontSize: '1.875rem' }}>Chatbot</H1>
+      <P style={{ color: 'white', fontSize: '1.5rem' }}>Com valores baixos e acessíveis, você poderá ter acesso a uma plataforma moderna e super prática que irá revolucionar e impulsionar suas vendas e até seu negócio/network...</P>
+    </DivCards>
 
-          <DivCards style={{ background: '#4EA3E2' }}>
-            <Img src={metas} alt="rosto de um robo" />
-            <H1 style={{ color: 'white', fontSize: '1.875rem' }}>Métricas em tempo real</H1>
-            <P style={{ color: 'white', fontSize: '1.5rem' }}>Com valores baixos e acessíveis, você poderá ter acesso a uma plataforma moderna e super prática que irá revolucionar e impusionar suas vendas e até seu negócio/network...</P>
-          </DivCards>
+    <DivCards style={{ background: '#4EA3E2' }}>
+      <Img src={metas} alt="rosto de um robô" />
+      <H1 style={{ color: 'white', fontSize: '1.875rem' }}>Métricas em tempo real</H1>
+      <P style={{ color: 'white', fontSize: '1.5rem' }}>Com valores baixos e acessíveis, você poderá ter acesso a uma plataforma moderna e super prática que irá revolucionar e impulsionar suas vendas e até seu negócio/network...</P>
+    </DivCards>
 
-          <DivCards style={{ background: '#2171ac' }}>
-            <Img src={cifrao} alt="rosto de um robo" />
-            <H1 style={{ color: 'white', fontSize: '1.875rem' }}>Valores Acessiveis</H1>
-            <P style={{ color: 'white', fontSize: '1.5rem' }}>Com valores baixos e acessíveis, você poderá ter acesso a uma plataforma moderna e super prática que irá revolucionar e impusionar suas vendas e até seu negócio/network...</P>
-          </DivCards>
+    <DivCards style={{ background: '#2171ac' }}>
+      <Img src={cifrao} alt="rosto de um robô" />
+      <H1 style={{ color: 'white', fontSize: '1.875rem' }}>Valores Acessíveis</H1>
+      <P style={{ color: 'white', fontSize: '1.5rem' }}>Com valores baixos e acessíveis, você poderá ter acesso a uma plataforma moderna e super prática que irá revolucionar e impulsionar suas vendas e até seu negócio/network...</P>
+    </DivCards>
+  </DivSectionCards>
+</Div>
 
-
-        </DivSectionCards>
-      </Div>
 
       <ContainerGrid2>
         <H2 style={{ textAlign: 'center', color: 'white', fontWeight: 'normal', fontSize: '2rem' }}>Algumas razões do</H2>

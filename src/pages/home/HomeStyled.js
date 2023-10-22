@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 
-
 export const ContainerGrid = styled.div`
   background: linear-gradient(
     107deg,
@@ -16,7 +15,15 @@ export const ContainerGrid = styled.div`
     font-weight: normal;
   }
 
+  @media (max-width: 768px) {
+    padding: 20px 0; // Reduza o espaçamento interno em telas menores
+    margin-bottom: 30px; // Reduza a margem inferior em telas menores
+    h1 {
+      font-size: 1.5rem; // Reduza o tamanho da fonte em telas menores
+    }
+  }
 `;
+
 
 export const ContainerGrid2 = styled.div`
   background: #4EA3E2;
