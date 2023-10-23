@@ -243,8 +243,8 @@ const Home = () => {
         <DivContent>
           <Img src={notebookHome} alt="notebook com informações" style={{ maxWidth: '100%' }} />
           <Div style={{ maxWidth: '100%', padding: '1rem' }}>
-            <H1 style={{ fontSize: '2rem', marginBottom: '1rem', fontWeight: 'normal' }}>Converta leads com <Span style={{ fontWeight: 'bold' }}>campanhas</Span></H1>
-            <P style={{ fontSize: '1rem' }}>
+            <H1 style={{ fontSize: '2.25rem', marginBottom: '1rem', fontWeight: 'normal' }}>Converta leads com <Span style={{ fontWeight: 'bold' }}>campanhas</Span></H1>
+            <P style={{ fontSize: '1.813rem' }}>
               Use o poder da <Span style={{ color: '#2171ac' }}>inteligência artificial (ChatGPT)</Span> para gerar novas campanhas para sua base de clientes, totalmente incluso no plano e <Span style={{ color: '#2171ac' }}>sem uma equipe especializada de marketing.</Span>
             </P>
           </Div>
