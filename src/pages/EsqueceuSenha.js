@@ -1,9 +1,10 @@
 import React from "react";
 import { BoxLogin, Br, CGrid, Form, H1, Img, P, Section } from "../styles/tags";
 import cadeado from "../image/lock.png";
-import Input, { InputGroup } from "../components/form/input/Input";
+import Input from "../components/form/input/Input";
 import Button from "../components/form/button/Button";
 import styled from "styled-components";
+import { InputGroup } from "../components/form/input/InputStyled";
 
 export const  BoxImg = styled.div `
   @media(max-width: 600px) {
@@ -19,7 +20,7 @@ const EsqueceuSenha = () => {
       <CGrid>
         <BoxLogin type="first" style={{ padding: '80px 0 20px 0'}}>
           <H1
-            textAlign='center'
+            textalign='center'
             type="branco"
             fontSize="2.5"
             style={{ textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)" }}
@@ -34,7 +35,7 @@ const EsqueceuSenha = () => {
           <P
             type="branco"
             fontSize="1.25"
-            textAlign="center"
+            textalign="center"
             style={{
               textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
             }}

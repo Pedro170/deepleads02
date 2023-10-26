@@ -58,7 +58,7 @@ const PlanosAssinaturas = () => {
   return (
     <Section>
       <Container>
-        <CGrid grid="1fr" alignItems="center" padding="60px 0 30px 0">
+        <CGrid grid="1fr" alignitems="center" padding="60px 0 30px 0">
           <Box>
             <TituloPrincipal>
               Planos de <Span>Assinatura</Span>

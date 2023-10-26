@@ -21,7 +21,7 @@ const MercadoTech = () => {
           grid="repeat(auto-fit, minmax(400px, 1fr))"
           gap="2rem"
           padding="60px 0"
-          alignItems="center"
+          alignitems="center"
         >
           <Box>
             <Img

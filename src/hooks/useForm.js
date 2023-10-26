@@ -25,6 +25,7 @@ const useForm = () => {
     setValue,
     onChange,
     validacao: () => validacao(value),
+    onBlur: () => validacao(value)
   };
 };
 

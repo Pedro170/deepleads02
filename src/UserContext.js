@@ -1,39 +1,70 @@
 import React from "react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import { TOKEN_POST } from "./utils/Api";
 
 export const UserContext = React.createContext();
+
 export const UserStorage = ({ children }) => {
   const [data, setData] = React.useState(null);
   const [login, setLogin] = React.useState(null);
-  // const [loading, setLoading] = useState(false);
-  // const [error, setError] = useState(null);
+  const [loading, setLoading] = React.useState(false);
+  const [error, setError] = React.useState(null);
+
+  const imgusuario = "https://source.unsplash.com/random/200x200/?lion"
 
   const navigate = useNavigate();
 
-  const getUser = (usuario) => {
-    const usuarioToken = window.localStorage.getItem("usuario");
+  const userLogin = async (login, senha) => {
+    try {
+      setError(null);
+      setLoading(true);
+      const { url, options } = TOKEN_POST({ login, senha });
+      const response = await fetch(url, options);
 
-    if (usuario) {
-      setLogin(true);
-      navigate('/cliente/inicio');
+      if (response.ok) {
+        const usuario = await response.json();
+        window.localStorage.setItem("usuario", JSON.stringify(usuario));
+        navigate("/cliente/inicio");
+        window.location.reload();
+        
+      } else {
+        setError("Email ou senha inválido")
+      }
+      
+    } catch (err) {
+      setError(err);
+      setLogin(false);
+      setLoading(false);
+    } finally {
+      setLoading(false);
     }
   };
 
-  const userLogin = async (login, senha) => {
-    const { url, options } = TOKEN_POST({ login, senha });
-    const response = await fetch(url, options);
-    const usuario = await response.json();
-    window.localStorage.setItem("usuario", JSON.stringify(usuario));
-    window.location.reload()
-    navigate('/cliente/inicio');
+  React.useEffect(() => {
+    setData(JSON.parse(window.localStorage.getItem("usuario")));
+    //const usuario = JSON.parse(window.localStorage.getItem("usuario")) 
+  }, []);
+
+  const userLogout = async () => {
+    setData(null);
+    setError(null);
+    setLoading(false);
+    setLogin(false);
+    window.localStorage.removeItem("usuario");
+    navigate("/");
+    window.location.reload();
   };
 
   return (
     <UserContext.Provider
       value={{
         userLogin,
-        data
+        userLogout,
+        loading,
+        data,
+        error,
+        login,
+        imgusuario
       }}
     >
       {children}
@@ -42,55 +73,3 @@ export const UserStorage = ({ children }) => {
 };
 
 export default UserContext;
-
-// import React, { useState } from "react";
-// import { useNavigate } from 'react-router-dom';
-// import { TOKEN_POST } from "./utils/Api";
-
-// export const UserContext = React.createContext();
-
-// export const UserStorage = ({ children }) => {
-//   const [data, setData] = useState(null);
-//   const [login, setLogin] = useState(null);
-//   // const [loading, setLoading] = useState(false);
-//   // const [error, setError] = useState(null);
-
-//   const navigate = useNavigate();
-
-//   const getUser = (usuario) => {
-//     const usuarioToken = window.localStorage.getItem("token");
-//     if (usuario.token === usuarioToken) {
-//       setLogin(true);
-//       setData(usuario)
-//       console.log(usuario);
-
-//       navigate('/cliente/inicio');
-
-//       console.log("data ->" +data)
-
-//       console.log("login ->" + login)
-//     }
-//   };
-
-//   const userLogin = async (login, senha) => {
-//     const { url, options } = TOKEN_POST({ login, senha });
-//     const response = await fetch(url, options);
-//     const usuario = await response.json();
-//     window.localStorage.setItem("token", usuario.token);
-    
-
-//     getUser(usuario);
-//   };
-
-//   return (
-//     <UserContext.Provider
-//       value={{
-//         userLogin,
-//       }}
-//     >
-//       {children}
-//     </UserContext.Provider>
-//   );
-// };
-
-// export default UserContext;

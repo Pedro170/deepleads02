@@ -4,7 +4,7 @@ import cores from "./paleta";
 export const P = styled.p`
   color: ${({ type }) => cores(type)};
   font-size: ${(props) => `${props.fontSize}rem`};
-  text-align: ${(props) => props.textAlign};
+  text-align: ${(props) => props.textalign};
   margin-top: ${(props) => `${props.mt}rem`};
   margin-right: ${(props) => `${props.mr}rem`};
   margin-bottom: ${(props) => `${props.mb}rem`};
@@ -17,7 +17,7 @@ export const P = styled.p`
 export const H1 = styled.h1`
   color: ${({ type }) => cores(type)};
   margin: ${(props) => `${props.margin}`};
-  text-align: ${(props) => props.textAlign};
+  text-align: ${(props) => props.textalign};
   font-size: ${(props) => `${props.fontSize}rem`};
 
   @media (max-width: 600px) {
@@ -37,7 +37,7 @@ export const H3 = styled.h3`
   margin-right: ${(props) => `${props.mr}px`};
   margin-bottom: ${(props) => `${props.mb}px`};
   margin-left: ${(props) => `${props.ml}px`};
-  text-align: ${(props) => props.textAlign};
+  text-align: ${(props) => props.textalign};
 `;
 export const H4 = styled.h4`
   color: ${({ type }) => cores(type)};
@@ -58,7 +58,7 @@ export const Box = styled.div`
   margin-right: ${(props) => `${props.mr}rem`};
   margin-bottom: ${(props) => `${props.mb}rem`};
   margin-left: ${(props) => `${props.ml}rem`};
-  text-align: ${(props) => props.textAlign};
+  text-align: ${(props) => props.textalign};
 `;
 
 export const Span = styled.span`
@@ -67,7 +67,7 @@ export const Span = styled.span`
   margin-right: ${(props) => `${props.mr}rem`};
   margin-bottom: ${(props) => `${props.mb}rem`};
   margin-left: ${(props) => `${props.ml}rem`};
-  text-align: ${(props) => props.textAlign};
+  text-align: ${(props) => props.textalign};
 `;
 
 export const Img = styled.img`
@@ -76,9 +76,9 @@ export const Img = styled.img`
   }
 `;
 
-export const Footer = styled.footer``
+export const Footer = styled.footer``;
 
-export const Table = styled.table``
+export const Table = styled.table``;
 
 export const Ul = styled.ul``;
 
@@ -101,7 +101,7 @@ export const CMain = styled.main`
   margin-top: 80px;
 
   &.logado {
-    margin-top: 160px;
+    margin-top: 0;
   }
 `;
 
@@ -136,7 +136,7 @@ export const CGrid = styled.div`
   grid-template-columns: ${(props) => `${props.grid}`};
   gap: ${(props) => `${props.gap}`};
   justify-items: center;
-  align-items: ${(props) => `${props.alignItems}`};
+  align-items: ${(props) => `${props.alignitems}`};
   padding: ${(props) => `${props.padding}`};
 
   @media (max-width: 600px) {
@@ -195,7 +195,7 @@ export const Paragrafo = styled.p`
     color: #2171ac;
   }
 
-  @media(max-width: 600px) {
+  @media (max-width: 600px) {
     width: initial !important;
   }
 `;
@@ -213,35 +213,122 @@ export const BoxLogin = styled.div`
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
-  row-gap: 1.5rem;
+  row-gap: 1rem;
   max-width: ${(props) => `${props.margin}`};
   padding: 1rem;
 `;
-export const BoxConversa = styled.div`
+
+export const MainLogado = styled.div`
   position: relative;
-  max-width: 814px;
-  min-height: 462px;
-  width: 100%;
-  height: 462px;
-  border-radius: 10px;
-  background: #cdcdcd;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25),
-    0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  padding: 1rem;
+  top: 0;
+  left: 240px;
+  width: calc(100% - 240px);
+  transition: linear 0.3s;
+
+  &.ativo {
+    left: 0;
+    width: 100%;
+  }
+
+  @media (max-width: 800px) {
+    &.ativo {
+      left: 0;
+      width: 100%;
+    }
+
+    left: 0;
+    width: 100%;
+  }
+
+  .header-conteudo {
+    position: fixed;
+    top: 0;
+    left: 240px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: calc(100% - 240px);
+    height: 44px;
+    background: #2171ac;
+    color: #fff;
+    padding-inline: 1rem;
+    transition: linear 0.3s;
+    z-index: 10;
+
+    &.ativo {
+      left: 0;
+      width: 100%;
+    }
+
+    h2 {
+      display: flex;
+      align-items: center;
+      column-gap: 1rem;
+      font-weight: normal;
+      font-size: 1.25rem;
+
+      i {
+        display: block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #022945;
+      }
+    }
+
+    .button-menu {
+      position: fixed;
+      top: 2px;
+      right: 1rem;
+      width: 40px;
+      height: 40px;
+      border: none;
+      border-radius: 8px;
+      background: none;
+      cursor: pointer;
+
+      i {
+        font-size: 26px;
+        color: #fff;
+      }
+    }
+
+    @media (max-width: 800px) {
+      h2 {
+        gap: 0.25rem;
+        font-size: 1rem;
+      }
+
+      .button-menu {
+        right: 1rem;
+      }
+
+      &.ativo {
+        left: 0;
+        width: 100%;
+      }
+
+      left: 0;
+      width: 100%;
+    }
+
+    @media (max-width: 375px) {
+      padding-inline: 0.5rem;
+
+      .button-menu {
+        right: 0.5rem;
+      }
+    }
+  }
 `;
 
-export const Conversa = styled.div`
+export const SectionLogado = styled.div`
   width: 100%;
-  height: calc(100% - 65px);
-  margin-bottom: 1.5rem;
-  padding-left: 6rem;
-  overflow: auto;
+  height: calc(100vh - 44px);
+  margin-top: 44px;
+  padding-inline: 1rem;
+`;
 
-  &::-webkit-scrollbar {
-    width: 10px;
-  }
-
-  @media (max-width: 600px) {
-    padding: 0;
-  }
+export const Button = styled.button`
+  border: none;
 `;

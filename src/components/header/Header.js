@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import { Box, Img, Span, Strong } from "../../styles/tags";
 import logo from "../../image/logo.svg";
@@ -17,6 +17,7 @@ export const HeaderWrapper = styled.header`
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
   z-index: 600;
 `;
+
 export const CHeader = styled.div`
   display: flex;
   justify-content: space-between;
@@ -131,7 +132,13 @@ export const Li = styled.li`
     background: #2171ac;
   }
 
-  &:hover span, &:focus span {
+  &:hover span,
+  &:focus span {
+    width: 100%;
+    animation: ${animeWidth} 0.8s;
+  }
+
+  &.active {
     width: 100%;
     animation: ${animeWidth} 0.8s;
   }
@@ -224,7 +231,7 @@ export const BHamburger = styled.button`
         transform: rotate(45deg);
         box-shadow: none;
       }
-      
+
       &::after {
         transform: rotate(-45deg);
       }
@@ -276,52 +283,47 @@ export const BHamburger = styled.button`
   }
 `;
 
-
-
 const Header = () => {
   const [ativo, setAtivo] = React.useState(false);
-  
+
   return (
     <HeaderWrapper>
       <CHeader>
-        <Link to="/home" className="logo">
+        <NavLink to="/home" className="logo">
           <Img src={logo} alt="deepleads" />
-        </Link>
+        </NavLink>
 
         <Nav className={ativo ? "ativo" : ""}>
           <Ul>
             <Li>
-              <Link to="/home">Home</Link>
+              <NavLink to="/home">Home</NavLink>
               <Span></Span>
             </Li>
 
             <Li>
-              <Link to="/sobre">Sobre</Link>
+              <NavLink to="/sobre">Sobre</NavLink>
               <Span></Span>
             </Li>
 
             <Li>
-              <Link to="/planos">Planos</Link>
+              <NavLink to="/planos">Planos</NavLink>
               <Span></Span>
             </Li>
 
             <Li>
-              <Link to="/mercado-tech">
-                Mercado{" "}
-                <Strong type="first">
-                  Tech
-                </Strong>
-              </Link>
+              <NavLink to="/mercado-tech">
+                Mercado <Strong type="first">Tech</Strong>
+              </NavLink>
               <Span></Span>
             </Li>
 
             <Li>
-              <Link to="/contato">Contato</Link>
+              <NavLink to="/contato">Contato</NavLink>
               <Span></Span>
             </Li>
 
             <Li className="btn-login">
-              <Link to="/login">login</Link>
+              <NavLink to="/login">login</NavLink>
               <Span></Span>
             </Li>
           </Ul>
@@ -336,7 +338,7 @@ const Header = () => {
         </BHamburger>
 
         <Link to="/login" className="user">
-          <Img src={user} alt="usuário" style={{  width: '50px' }} />
+          <Img src={user} alt="usuário" style={{ width: "50px" }} />
         </Link>
       </CHeader>
     </HeaderWrapper>

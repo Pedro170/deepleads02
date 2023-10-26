@@ -1,8 +1,6 @@
 import styles from "./Pagination.module.css"
 
 const Pagination = ({ setCurrentPege, pages }) => {
-  //console.log(pages);
-
   return (
     <div className={ styles.pagination }>
       { Array.from(Array(pages), (_, index) => {

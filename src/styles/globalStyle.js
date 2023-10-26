@@ -55,24 +55,12 @@ const GlobalStyles = createGlobalStyle`
     background: red;
   }
 
-
-  .paragrafo-campanha {
-    width: max-content;
-    border-radius: 10px;
-    background: #FFF;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    color: #25804F;
-    padding: 1rem;
-    margin: auto 0 2rem auto;
-    font-size: 1.2;
-  }
-
   .Chat {
     position: fixed;
     bottom: 90px;
     right: 10px;
     font-family: Arial, Helvetica, sans-serif;
-    z-index: 500;
+    z-index: 600;
   }
 
   .btn-chat {
@@ -94,6 +82,15 @@ const GlobalStyles = createGlobalStyle`
     img {
       width: 30px;
     }
+
+    @media(max-width: 800px) {
+      width: 40px;
+      height: 40px;
+
+      img {
+        width: 24px;
+      }
+    }
   }
 
   .fechar-modal {
@@ -102,39 +99,31 @@ const GlobalStyles = createGlobalStyle`
     cursor: pointer;
   }
 
-  .texto-conversa {
-    border-radius: 10px;
-    background: #FFF;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    margin-bottom: calc(2rem - 2px);
-    line-height: 1.33;
-    font-size: 1.25rem;
-    padding: 1rem;
+  .carregando {
+    cursor: wait !important;
+    opacity: .5;
   }
 
-  .pergunta {
-    color: #C03333;
+  .error-input {
+    font-size: .875rem;
+    margin-top: 8px;
+    color: #f00;
   }
 
-  .resposta {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 1.5rem;
-    align-items: flex-start;
-    color: #25804F;
+  .formulario-login .error-input {
+    color: #fff !important;
+  }
 
-    img {
-      width: 28px;
+  .formulario-editar {
+    width: 60%;
+
+    p {
+      font-size: .875rem;
+      margin-top: 4px;
+      color: #f00;
     }
-  }
-
-  .resposta:nth-child(even) {
-    position: relative;
-    left: -60px;
-    z-index: 2;
-
-    @media(max-width: 600px) {
-      left: 0;
+    @media(max-width: 800px) {
+      width: 100%;
     }
   }
 `;

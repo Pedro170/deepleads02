@@ -1,37 +1,5 @@
-import { styled } from "styled-components";
-
-export const InputGroup = styled.div`
-  input {
-    background: ${(props) => props.background};
-    border:${(props) => props.border};
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-    width: 100%;
-    height: 40px;
-    text-align: center;
-  }
-`;
-
-const InputT = styled.input`
-  border: none;
-  background: transparent;
-  width: 100%;
-  height: 100%;
-  color: ${(props) => props.cor};
-  font-size: 1.25rem;
-  outline: none;
-  padding: .25rem;
-
-  &::placeholder {
-    color: ${(props) => props.corplaceholdereholder};
-  }
-`;
-
-const Label = styled.label`
-  position: absolute;
-  top: 0;
-  left: 0;
-`;
+import { P } from "../../../styles/tags";
+import { InputT, Label } from "./InputStyled";
 
 const Input = ({
   label,
@@ -39,9 +7,10 @@ const Input = ({
   name,
   id,
   value,
+  error,
   placeholder,
   onChange,
-  ...props
+  onBlur,
 }) => {
   return (
     <>
@@ -51,11 +20,13 @@ const Input = ({
         name={name}
         value={value}
         onChange={onChange}
+        onBlur={onBlur}
         placeholder={placeholder}
-        {...props}
       />
 
       <Label htmlFor={id}>{label}</Label>
+
+      {error && <P className="error-input">{error}</P>}
     </>
   );
 };

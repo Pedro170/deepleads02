@@ -13,14 +13,15 @@ import {
   Span,
   TituloPrincipal,
 } from "../styles/tags";
-import Input, { InputGroup } from "../components/form/input/Input";
+import Input from "../components/form/input/Input";
 import Button from "../components/form/button/Button";
+import { InputGroup } from "../components/form/input/InputStyled";
 
 const Contato = () => {
   return (
     <Section>
       <Container>
-        <CGrid grid="1fr" alignItems="center" padding="60px 0">
+        <CGrid grid="1fr" alignitems="center" padding="60px 0">
           <TituloPrincipal>
             Fale <Span>Conosco</Span>
           </TituloPrincipal>
@@ -31,7 +32,7 @@ const Contato = () => {
 
           <Box mb={1.5}>
             <P
-              textAlign="center"
+              textalign="center"
               type="second"
               fontSize="1.25"
               margin="0 0 1.5rem 0"
@@ -44,7 +45,7 @@ const Contato = () => {
             </Paragrafo>
 
             <P
-              textAlign="center"
+              textalign="center"
               type="second"
               fontSize="1.25"
               margin="0 0 2rem 0"

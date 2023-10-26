@@ -12,7 +12,7 @@ export const CFooter = styled.footer`
 const Footer = () => {
   return (
     <CFooter>
-      <P negrito="bold" textAlign="center" type="cor-02">
+      <P negrito="bold" textalign="center" type="cor-02">
         &copy; Copyright 2023 - Todos os direitos reservados deepleads
       </P>
     </CFooter>
