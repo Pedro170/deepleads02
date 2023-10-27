@@ -35,6 +35,7 @@ import Th from "../../../components/Table/Th";
 import Tr from "../../../components/Table/Tr";
 import Td from "../../../components/Table/Td";
 import { ItemBox } from "./NegocioStyled";
+import UserContext from "../../../UserContext";
 
 const data = [
   {
@@ -145,6 +146,13 @@ const data02 = [
 ];
 
 const Negocio = () => {
+  const { setTexto, setDescricao } = React.useContext(UserContext);
+
+  React.useEffect(() => {
+    setTexto("Negócio")
+    setDescricao('Veja como está os seus negócios')
+  }, [])
+
   return (
     <Section>
       <Container>

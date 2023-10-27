@@ -15,27 +15,12 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import ChatDeepleads from "./components/chat/ChatDeepleads";
 import AppRoutesLogado from "./routes/AppRoutesLogado";
-import Head from "./components/helpers/head/Head";
+import UserContext from "./UserContext";
 
 const App = () => {
   const logado = localStorage.getItem("usuario");
-
-  let url = window.location.pathname;
-  let parts = url.split("/");
-  let urlComponent = parts.pop() || parts.pop();
-  let texto = "";
-
-  if (urlComponent === "inicio") {
-    texto = "Crie suas campanhas";
-  } else if (urlComponent === "leads") {
-    texto = "Minere leads para a sua campanha";
-  } else if (urlComponent === "campanha") {
-    texto = "Dispare suas campanhas para potenciais clientes";
-  } else if (urlComponent === "conta") {
-    texto = "Edite sua informações";
-  }
-
   const [ativo, setAtivo] = React.useState(false)
+  const { texto, descricao } = React.useContext(UserContext)
 
   function handleMenuAtivo() {
     setAtivo(!ativo)
@@ -49,9 +34,7 @@ const App = () => {
         {logado ? (
           <MainLogado className={ativo ? 'ativo'  : ''}>
             <Div className={`header-conteudo ${ativo ? 'ativo' : ''}`}>
-              <H2>
-                <Head />
-              </H2>
+              <H2>{texto && texto} <i></i> {descricao}</H2>
 
               <Button className="button-menu" onClick={handleMenuAtivo}>
                 <i className="fas fa-bars"></i>

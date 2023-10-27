@@ -32,7 +32,12 @@ const Leads = () => {
   const [error, setError] = React.useState(null)
   const [loading, setLoading] = React.useState(null)
  
-  const { data } = React.useContext(UserContext)
+  const { data, setTexto, setDescricao } = React.useContext(UserContext)
+
+  React.useEffect(() => {
+    setTexto("Leads")
+    setDescricao('Minere leads para a sua campanha')
+  }, [])
  
   const handleMinerar = async (event) => {
     event.preventDefault();

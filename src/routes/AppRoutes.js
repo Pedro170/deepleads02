@@ -7,7 +7,7 @@ import PlanosAssinaturas from "../pages/PlanosAssinaturas";
 import Login from "../pages/Login";
 import EsqueceuSenha from "../pages/EsqueceuSenha";
 import Contato from "../pages/Contato";
-// import NotFound from "../components/helpers/NotFound";
+import NotFound from "../components/helpers/NotFound";
 
 const AppRoutes = () => {
   return (
@@ -20,7 +20,7 @@ const AppRoutes = () => {
       <Route path="login" element={<Login />} />
       <Route path="esqueceu-senha" element={<EsqueceuSenha />} />
       <Route path="contato" element={<Contato />} />
-      {/* <Route path="*" element={<NotFound />} /> */}
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 };

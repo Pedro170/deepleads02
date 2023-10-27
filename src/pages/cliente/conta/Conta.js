@@ -34,7 +34,7 @@ export const BoxImg = styled.div`
 const Conta = () => {
   const [loading, setLoading] = React.useState(null);
   const [error, setError] = React.useState(null);
-  const { data } = React.useContext(UserContext);
+  const { data, setTexto, setDescricao } = React.useContext(UserContext);
   const navigate = useNavigate();
 
   const nome = useForm();
@@ -84,6 +84,11 @@ const Conta = () => {
       setLoading(false);
     }
   };
+
+  React.useEffect(() => {
+    setTexto("Perfil")
+    setDescricao('Edite sua informações')
+  }, [])
 
   return (
     <Section>

@@ -9,6 +9,8 @@ export const UserStorage = ({ children }) => {
   const [login, setLogin] = React.useState(null);
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState(null);
+  const [texto, setTexto] = React.useState('')
+  const [descricao, setDescricao] = React.useState('')
 
   const imgusuario = "https://source.unsplash.com/random/200x200/?lion"
 
@@ -60,11 +62,15 @@ export const UserStorage = ({ children }) => {
       value={{
         userLogin,
         userLogout,
+        setTexto,
+        setDescricao,
         loading,
         data,
         error,
         login,
-        imgusuario
+        imgusuario,
+        texto,
+        descricao
       }}
     >
       {children}

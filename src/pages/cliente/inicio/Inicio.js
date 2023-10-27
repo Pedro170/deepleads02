@@ -1,14 +1,6 @@
 import React from "react";
 import copy from "../../../image/copy.svg";
-import {
-  CGrid,
-  Div,
-  Form,
-  Img,
-  P,
-  Section,
-  Span,
-} from "../../../styles/tags";
+import { CGrid, Div, Form, Img, P, Section, Span } from "../../../styles/tags";
 import { BASE_CHAT_DEV } from "../../../utils/Api";
 import { BoxConversa, Conversa } from "./Inicio.Styled";
 import Textarea from "../../../components/form/textarea/Textarea";
@@ -17,17 +9,22 @@ import {
   InputGroup,
 } from "../../../components/form/textarea/TextareaStyled";
 import UserContext from "../../../UserContext";
- 
+
 const Inicio = () => {
   const [loading, setLoading] = React.useState(null);
   const [error, setError] = React.useState(null);
   const [campanha, setCampanha] = React.useState("");
-  const { imgusuario } = React.useContext(UserContext)
+  const { imgusuario, setTexto, setDescricao } = React.useContext(UserContext);
+
+  React.useEffect(() => {
+    setTexto('Inicio')
+    setDescricao('Crie suas campanhas')
+  }, []);
 
   const mensagemGPT = async (e) => {
     e.preventDefault();
     const conversa = document.querySelector("#conversa");
- 
+
     conversa.innerHTML += `
       <div class="box-conversa">
         <div class="box-img">
@@ -38,14 +35,14 @@ const Inicio = () => {
         </p>
       </div>
     `;
- 
+
     try {
       setError(null);
       setLoading(true);
       const response = await fetch(
         `${BASE_CHAT_DEV}message?message=${campanha} com 25 palavras`
       );
- 
+
       if (response.ok) {
         const json = await response.json();
         conversa.innerHTML += `
@@ -54,7 +51,7 @@ const Inicio = () => {
           <img src="${copy}" alt="documento" class="btn-copia" />
         </p>
       `;
- 
+
         setCampanha("");
       } else {
         setError("erro");
@@ -65,15 +62,16 @@ const Inicio = () => {
     } finally {
       setLoading(false);
     }
- 
+
     const p = document.querySelector(".texto-conversa.resposta span");
     const buttons = document.querySelectorAll(".btn-copia");
     const storage = document.createElement("textarea");
- 
+
     if (buttons) {
-      buttons.forEach(button => {
-        button.addEventListener('click', () => {
-          let paragrafo = button.parentElement.nextSibling.previousSibling.innerText
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          let paragrafo =
+            button.parentElement.nextSibling.previousSibling.innerText;
           const texto = paragrafo;
           storage.value = texto.replace(/["]/g, "");
           p.appendChild(storage);
@@ -81,11 +79,11 @@ const Inicio = () => {
           storage.setSelectionRange(0, 99999);
           document.execCommand("copy");
           p.removeChild(storage);
-        })
+        });
       });
     }
   };
- 
+
   return (
     <Section>
       <CGrid grid="1fr" padding="30px 0">
@@ -102,16 +100,13 @@ const Inicio = () => {
             <Conversa id="conversa">
               <Div className="box-conversa">
                 <Div className="box-img">
-                  <Img
-                    src={imgusuario}
-                    alt="documento"
-                  />
+                  <Img src={imgusuario} alt="documento" />
                 </Div>
                 <P className="texto-conversa pergunta">
                   Campanha para venda de motos
                 </P>
               </Div>
- 
+
               <P className="texto-conversa resposta">
                 <Span>
                   "Não perca a chance de acelerar seus sonhos! Aproveite nossa
@@ -121,7 +116,7 @@ const Inicio = () => {
                 <Img src={copy} alt="documento" />
               </P>
             </Conversa>
- 
+
             <Div style={{ width: "100%" }}>
               <Form className="fromulario-gpt">
                 <InputGroup background="#F0F0F0" border="solid 1px #C3C3C3">
@@ -134,7 +129,7 @@ const Inicio = () => {
                     onChange={({ target }) => setCampanha(target.value)}
                   />
                 </InputGroup>
- 
+
                 {loading ? (
                   <Span
                     style={{ height: "40px", padding: ".5rem 1.2rem" }}
@@ -147,7 +142,7 @@ const Inicio = () => {
                 )}
               </Form>
             </Div>
- 
+
             {error && <P>{error}</P>}
           </BoxConversa>
         </Div>
@@ -155,5 +150,5 @@ const Inicio = () => {
     </Section>
   );
 };
- 
+
 export default Inicio;
