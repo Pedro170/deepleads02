@@ -31,8 +31,7 @@ const Login = () => {
           </H1>
 
           <P type="branco" fontSize="1.25" textalign="center" mt="2" mb="2">
-            Entre em sua conta para ter <Br /> acesso a todo o potencial
-            deepleads
+          Acesse o seu perfil e aproveite<Br /> todo o potencial das ferramentas do deepleads
           </P>
 
           <Form onSubmit={ handleSubmit } className="formulario-login">

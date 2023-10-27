@@ -37,7 +37,7 @@ export const DivInfo = styled.div`
   flex-shrink: 0;
   border-radius: 0.384rem;
   background: #fff;
-  box-shadow: 0px 10px 30px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 10px 30px 2px rgba(0, 0, 0, 0.1); /* Add drop shadow here */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -61,6 +61,7 @@ export const DivInfo = styled.div`
   }
 `;
 
+
 export const DivCards = styled.div`
   display: flex;
   width: 25.313rem;
@@ -73,7 +74,9 @@ export const DivCards = styled.div`
   background: #78c6ff;
   justify-content: center;
   padding: 3rem;
+  box-shadow: 0px 10px 30px 2px rgba(0, 0, 0, 0.1); /* Add drop shadow here */
 `;
+
 
 export const DivReasons = styled.div`
   display: flex;
@@ -96,12 +99,14 @@ export const DivContent = styled.div`
 
 export const DivSectionCards = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr; // Define três colunas
-
+  grid-template-columns: 1fr 1fr 1fr; /* Define three columns */
   @media (max-width: 1350px) {
     grid-template-columns: 1fr 1fr;
   }
+  gap: 2rem; /* Add gap between elements */
+  box-shadow: 0px 10px 30px 2px rgba(0, 0, 0, 0.1); /* Add drop shadow here */
 `;
+
 
 export const DivSectionReasons = styled.div`
   display: grid;
@@ -111,18 +116,18 @@ export const DivSectionReasons = styled.div`
   margin-bottom: 0.625rem;
   place-items: center;
   grid-gap: 0.625rem;
-
   @media (max-width: 1350px) {
     grid-template-columns: 1fr 1fr;
     grid-gap: 2rem;
     margin-top: 1.5rem;
     padding: 2rem;
   }
-
   @media (max-width: 490px) {
     grid-template-columns: 1fr;
   }
+  box-shadow: 0px 10px 30px 2px rgba(0, 0, 0, 0.1); /* Add drop shadow here */
 `;
+
 
 const Home = () => {
   return (
@@ -156,7 +161,7 @@ const Home = () => {
               Gerencie, converta e qualifique seus Leads{" "}
             </H2>
             <P style={{ marginBottom: "1rem" }}>
-              Plataforma que conecta seu negócio com outras empresas
+            Aproveite o período de experimentação e aumente a visibilidade do seu negócio
             </P>
             <Div
               style={{
@@ -184,7 +189,7 @@ const Home = () => {
               }}
             >
               <Button
-                texto="REALIZAR DEMONSTRAÇÃO"
+                texto="INICIAR DEMOSNTRAÇÃO"
                 fontWeight="550"
                 type="first"
                 color="#fff"
@@ -195,7 +200,7 @@ const Home = () => {
                 }}
               />
               <Button
-                texto="CONHECER"
+                texto="SAIBA MAIS..."
                 fontWeight="550"
                 type="first"
                 color="#CFD0D0"
@@ -231,24 +236,24 @@ const Home = () => {
           }}
         >
           <DivInfo>
-            <H1>116M</H1>
-            <P>Cnpjoto tst</P>
+            <H1>43K</H1>
+            <P>Leads Minerados</P>
           </DivInfo>
 
           <DivInfo>
-            <H1>4.8m</H1>
-            <P>Leads Gerados</P>
+            <H1>12k</H1>
+            <P>Interações com IA</P>
           </DivInfo>
 
           <DivInfo>
-            <H1>+321%</H1>
-            <P>Ganhos Mensais</P>
+            <H1>93k</H1>
+            <P>Mensagens Enviadas</P>
           </DivInfo>
 
-          <DivInfo>
+          {/* <DivInfo>
             <H1>81NH1S</H1>
             <P>Ganhos mensais</P>
-          </DivInfo>
+          </DivInfo> */}
         </Div>
       </Container>
 
@@ -265,12 +270,12 @@ const Home = () => {
       >
         <P
           style={{
-            fontSize: "1.5rem",
+            fontSize: "3.5rem",
             fontStyle: "normal",
             fontWeight: "500",
           }}
         >
-          Seu negócio com
+          Explore todo o potencial da nossa
         </P>
         <P
           style={{
@@ -280,7 +285,7 @@ const Home = () => {
             fontWeight: "700",
           }}
         >
-          Inteligência Artificial nas campanhas
+          Inteligência Artificial e desenvolva novas campanhas para o seu negócio 
         </P>
 
         <DivContent>
@@ -297,18 +302,17 @@ const Home = () => {
                 fontWeight: "normal",
               }}
             >
-              Converta leads com{" "}
-              <Span style={{ fontWeight: "bold" }}>campanhas</Span>
+              Aumente a taxa de conversão do seu{" "}
+              <Span style={{ fontWeight: "bold" }}>negócio</Span>
             </H1>
             <P style={{ fontSize: "1.813rem" }}>
-              Use o poder da{" "}
+            Descubra novos clientes,{" "}
               <Span style={{ color: "#2171ac" }}>
-                inteligência artificial (ChatGPT)
+              crie promoções
               </Span>{" "}
-              para gerar novas campanhas para sua base de clientes, totalmente
-              incluso no plano e{" "}
+              e entre em contato com o seu público-alvo de {" "}
               <Span style={{ color: "#2171ac" }}>
-                sem uma equipe especializada de marketing.
+              forma rápida e intuitiva
               </Span>
             </P>
           </Div>
@@ -340,18 +344,11 @@ const Home = () => {
                 fontWeight: "normal",
               }}
             >
-              Encontre potenciais clientes
+              Segmente e encontre {" "}
+              <Span style={{ color: "#2171ac" }}>potenciais clientes</Span>
             </H1>
             <P style={{ fontSize: "1.813rem" }}>
-              Aumente sua{" "}
-              <Span style={{ color: "#2171ac" }}>base de Leads.</Span> nossa
-              ferramenta encontra{" "}
-              <Span style={{ color: "#2171ac" }}>potenciais clientes</Span> para
-              seu negocio,{" "}
-              <Span style={{ color: "#2171ac" }}>
-                filtre por regiões de interesse
-              </Span>
-              , nicho de mercado e reputação.
+            Crie uma nova base de leads, ou reutilize a sua própria base de dados, segmente por área de atuação, bairro, raio de alcance e muito mais...
             </P>
           </Div>
           <Img
@@ -385,16 +382,13 @@ const Home = () => {
                 fontWeight: "normal",
               }}
             >
-              Resultados em Tempo Real
+              Métricas em {" "}
+              <Span style={{ color: "#2171ac" }}>
+              Tempo Real
+              </Span>
             </H1>
             <P style={{ fontSize: "1.813rem" }}>
-              Dashboard de métricas para acompanhar sua performance,{" "}
-              <Span style={{ color: "#2171ac" }}>
-                sem depender de planilhas ou trabalho manual.
-              </Span>
-              Integre suas <Span style={{ color: "#2171ac" }}>Campanhas</Span>{" "}
-              com um clique e aumente a performance de{" "}
-              <Span style={{ color: "#2171ac" }}>seus anúncios.</Span>
+            Nossa solução conta com um dashboard  amigável e intuitivo para que você possa acompanhar de maneira dinâmica a performance das suas campanhas. Todo o potencial do deepleads na palma da sua mão...
             </P>
           </Div>
         </DivContent>
@@ -411,9 +405,9 @@ const Home = () => {
         }}
       >
         <Div style={{ textAlign: "center" }}>
-          <P style={{ fontSize: "1.875rem" }}>Agregando valor ao</P>
+          <P style={{ fontSize: "1.875rem" }}>Agregue valor às suas relações e</P>
           <P style={{ fontSize: "2rem", color: "#2171ac" }}>
-            Seus Clientes e em Seu Negócio
+          aumente o profissionalismo do seu negócio
           </P>
         </Div>
 
@@ -427,35 +421,29 @@ const Home = () => {
         >
           <DivCards>
             <Img src={rostoRobo} alt="rosto de um robô" />
-            <H1 style={{ color: "white", fontSize: "1.875rem" }}>Chatbot</H1>
+            <H1 style={{ color: "white", fontSize: "1.875rem" }}>Inteligência Artificial</H1>
             <P style={{ color: "white", fontSize: "1.5rem" }}>
-              Com valores baixos e acessíveis, você poderá ter acesso a uma
-              plataforma moderna e super prática que irá revolucionar e
-              impulsionar suas vendas e até seu negócio/network...
+            Descubra todo o potencial e inovação ao utilizar nossa inteligência artificial para criar propagandas para o seu negócio
             </P>
           </DivCards>
 
           <DivCards style={{ background: "#4EA3E2" }}>
             <Img src={metas} alt="rosto de um robô" />
             <H1 style={{ color: "white", fontSize: "1.875rem" }}>
-              Métricas em tempo real
+            Métricas em Tempo Real
             </H1>
             <P style={{ color: "white", fontSize: "1.5rem" }}>
-              Com valores baixos e acessíveis, você poderá ter acesso a uma
-              plataforma moderna e super prática que irá revolucionar e
-              impulsionar suas vendas e até seu negócio/network...
+            Gráficos inteligentes atualizados em tempo real, para que você possa acompanhar os resultados da sua campanha em poucos segundos.
             </P>
           </DivCards>
 
           <DivCards style={{ background: "#2171ac" }}>
             <Img src={cifrao} alt="rosto de um robô" />
             <H1 style={{ color: "white", fontSize: "1.875rem" }}>
-              Valores Acessíveis
+            Acessível para todos
             </H1>
             <P style={{ color: "white", fontSize: "1.5rem" }}>
-              Com valores baixos e acessíveis, você poderá ter acesso a uma
-              plataforma moderna e super prática que irá revolucionar e
-              impulsionar suas vendas e até seu negócio/network...
+            Democratizamos o acesso à tecnologia para pequenos e médios empreendedores. Saiba como fazer a diferença no seu negócio sem burocracias e altos investimentos.
             </P>
           </DivCards>
         </DivSectionCards>
@@ -470,7 +458,6 @@ const Home = () => {
             fontSize: "2rem",
           }}
         >
-          Algumas razões do
         </H2>
         <H1
           style={{
@@ -481,7 +468,7 @@ const Home = () => {
           }}
         >
           {" "}
-          Porque nos escolher
+          Por que nos escolher?
         </H1>
 
         <DivSectionReasons>
@@ -489,15 +476,23 @@ const Home = () => {
             <H3>Plataforma de alta performance</H3>
 
             <P>
-              Resultados rápidos e uma plataforma intuitiva, prática e eficiente{" "}
+            Tecnologia de ponta, integrando serviços na nuvem e inteligência artificial{" "}
             </P>
           </DivReasons>
 
           <DivReasons>
-            <H3>Alto nivel de usabilidade</H3>
+            <H3>Criação de campanhas personalizadas</H3>
 
             <P>
-              Resultados rápidos e uma plataforma intuitiva, prática e eficiente{" "}
+            Agende suas campanhas para atingir o seu público-alvo na hora e data desejadas{" "}
+            </P>
+          </DivReasons>
+
+          <DivReasons>
+            <H3>Indicadores de Performance</H3>
+
+            <P>
+            Obtenha insights valiosos através de gráficos estáticos e tome as melhores decisões para o seu negócio{" "}
             </P>
           </DivReasons>
 
@@ -505,15 +500,15 @@ const Home = () => {
             <H3>Acessibilidade</H3>
 
             <P>
-              Resultados rápidos e uma plataforma intuitiva, prática e eficiente{" "}
+            Solução 100% responsiva, acessível via computadores, tablets e celulares{" "}
             </P>
           </DivReasons>
 
           <DivReasons>
-            <H3>Acompanhamento de resultados</H3>
+            <H3>Mineração e armazenamento de leads</H3>
 
             <P>
-              Resultados rápidos e uma plataforma intuitiva, prática e eficiente{" "}
+            Crie sua própria base de potenciais leads ou utilize os seus leads para disparar novas campanhas{" "}
             </P>
           </DivReasons>
 
@@ -521,15 +516,7 @@ const Home = () => {
             <H3>Suporte dedicado</H3>
 
             <P>
-              Resultados rápidos e uma plataforma intuitiva, prática e eficiente{" "}
-            </P>
-          </DivReasons>
-
-          <DivReasons>
-            <H3>Plataforma de alta performance</H3>
-
-            <P>
-              Resultados rápidos e uma plataforma intuitiva, prática e eficiente{" "}
+            Atendimento e suporte 100% online através das redes sociais, email e plataformas digitais{" "}
             </P>
           </DivReasons>
         </DivSectionReasons>

@@ -59,8 +59,8 @@ const Contato = () => {
             <Form>
               <InputGroup background="#CDCDCD">
                 <Input
-                  placeholder="Email"
-                  type="email"
+                  placeholder="Nome"
+                  type="text"
                   cor="#4b4b4b"
                   corplaceholdereholder="#4b4b4b"
                 />
@@ -70,6 +70,16 @@ const Contato = () => {
                 <Input
                   placeholder="Assunto"
                   type="text"
+                  cor="#4b4b4b"
+                  corplaceholdereholder="#4b4b4b"
+                />
+              </InputGroup>
+
+              <InputGroup background="#CDCDCD">
+                <textarea
+                  className="input-style" // Add a CSS class for styling
+                  placeholder="Descrição"
+                  rows={5}
                   cor="#4b4b4b"
                   corplaceholdereholder="#4b4b4b"
                 />

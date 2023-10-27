@@ -14,6 +14,10 @@ import {
 } from "../styles/tags";
 
 const MercadoTech = () => {
+  const link1 = 'https://www.opovo.com.br/noticias/especialpublicitario/empreender/2021/11/17/inteligencia-artificial-para-os-pequenos-negocios.html';
+  const link2 = 'https://meunegocio.uol.com.br/blog/tendencias-tecnologia-para-pequenas-empresas/&sa=D&source=docs&ust=1698374246221816&usg=AOvVaw1AU2eOiFpUsxKnjxv_J2DN';
+  const link3 = 'https://santandernegocioseempresas.com.br/conhecimento/inovacao-tecnologia/inteligencia-artificial-ajudar-pequenas-empresas/';
+  const link4 = 'https://www.cnnbrasil.com.br/economia/pequenas-empresas-no-brasil-beneficiam-40-da-populacao-aponta-sebrae/';
   return (
     <Section>
       <Container>
@@ -39,7 +43,7 @@ const MercadoTech = () => {
             <Paragrafo margin="0 0 2rem 0">
               As empresas precisam inovar e criar valor na relação com o
               consumidor, com processos mais eficientes e confiáveis tendem a
-              aumentar a <Span>conversão dos negócios.</Span>
+              aumentar a <Span>taxa de conversão dos negócios.</Span>
             </Paragrafo>
 
             <Paragrafo margin="0 0 2rem 0">
@@ -56,21 +60,21 @@ const MercadoTech = () => {
           </Paragrafo>
 
           <CGrid grid="repeat(auto-fit, minmax(200px, 1fr))" gap="2rem">
-            <Link to="" style={{textAlign: 'center', color: '#202EAD'}}>
+            <Link to={link1} style={{textAlign: 'center', color: '#202EAD'}}>
               "Inteligência Artificial para os pequenos negócios Como
               automatizar, otimizar, melhorar processos."
             </Link>
 
-            <Link to="" style={{textAlign: 'center', color: '#202EAD'}}>
+            <Link to={link2} style={{textAlign: 'center', color: '#202EAD'}}>
               "Tendências de tecnologia para pequenas empresas."
             </Link>
 
-            <Link to="" style={{textAlign: 'center', color: '#202EAD'}}>
+            <Link to={link3} style={{textAlign: 'center', color: '#202EAD'}}>
               "Pequenos negócios usam inteligência artificial para se destacar
               no Google."
             </Link>
 
-            <Link to="" style={{textAlign: 'center', color: '#202EAD'}}>
+            <Link to={link4} style={{textAlign: 'center', color: '#202EAD'}}>
                "40% dos brasileiros são influenciados por pequenas empresas -
               seja como empreendedor, consumidor ou empregado."
             </Link>
