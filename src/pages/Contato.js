@@ -16,6 +16,7 @@ import {
 import Input from "../components/form/input/Input";
 import Button from "../components/form/button/Button";
 import { InputGroup } from "../components/form/input/InputStyled";
+import Textarea from "../components/form/textarea/Textarea";
 
 const Contato = () => {
   return (
@@ -59,8 +60,8 @@ const Contato = () => {
             <Form>
               <InputGroup background="#CDCDCD">
                 <Input
-                  placeholder="Email"
-                  type="email"
+                  placeholder="Nome"
+                  type="text"
                   cor="#4b4b4b"
                   corplaceholdereholder="#4b4b4b"
                 />
@@ -73,6 +74,19 @@ const Contato = () => {
                   cor="#4b4b4b"
                   corplaceholdereholder="#4b4b4b"
                 />
+              </InputGroup>
+
+              <InputGroup background="#CDCDCD" border="solid 1px #C3C3C3">
+                <Textarea
+                  style={{
+                    background: '#CDCDCD',
+                    color: '#4b4b4b',
+                    borderRadius: '10px',
+                    placeholderColor: '#2171AC',
+                  }}
+                  placeholder="Descreva..."
+                />
+
               </InputGroup>
 
               <Button

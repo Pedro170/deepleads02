@@ -40,7 +40,7 @@ const Sobre = () => {
 
             <Paragrafo margin="0 0 2rem 0">
               Nosso time desenvolveu um software capaz de minerar e armazenar
-              <Span>leads</Span> a partir do público alvo.
+              <Span> leads</Span> a partir do público alvo.
             </Paragrafo>
 
             <Paragrafo margin="0 0 2rem 0">
@@ -51,7 +51,7 @@ const Sobre = () => {
 
             <Paragrafo>
               Automatizamos processos de mensageria escalando o potencial de
-              comunicação do seu negocio, trazendo maior agilidade e
+              comunicação do seu negócio, trazendo maior agilidade e
               profissionalismo a pequenos empreendedores.
             </Paragrafo>
           </Box>

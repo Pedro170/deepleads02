@@ -65,7 +65,7 @@ const PlanosAssinaturas = () => {
             </TituloPrincipal>
 
             <Paragrafo margin="0 0 2rem 0">
-              Com um investimento mensal a partir de R$399, você tem acesso a
+              Com um investimento mensal a partir de R$489, você tem acesso a
               ferramentas com potencial para aumentar sua visibilidade e criar
               oportunidades de negócio 7 dias por semana.
             </Paragrafo>
@@ -77,18 +77,18 @@ const PlanosAssinaturas = () => {
                 </Box>
 
                 <Lista>
-                  <Li>ChatBot integração com AI</Li>
-                  <Li>Mensageria</Li>
-                  <Li>Integração da Base de Clientes</Li>
-                  <Li>5.000 tokens por mês</Li>
+                  <Li>50 leads B2B por semana</Li>
+                  <Li>50 interações com a IA por mês</Li>
+                  <Li>50 mensagens por dia via Whatsapp</Li>
+                  <Li>Dashboard Analytics</Li>
                 </Lista>
 
                 <Preco>
                   <Small>Por apenas</Small>
                   <Span>
                     <Small>R$</Small>
-                    <Strong>XXX.</Strong>
-                    <Small>xx</Small>
+                    <Strong>489.</Strong>
+                    <Small>00</Small>
                   </Span>
                 </Preco>
               </DivPlanos>
@@ -99,19 +99,18 @@ const PlanosAssinaturas = () => {
                 </Box>
 
                 <Lista>
-                  <Li>ChatBot integração com AI</Li>
-                  <Li>Atendimento automático ao Consumidor</Li>
-                  <Li>Mineração de Leads</Li>
-                  <Li>Integração da Base de Clientes</Li>
-                  <Li>500.000 tokens por mês</Li>
+                  <Li>100 leads B2B por semana</Li>
+                  <Li>150 interações com a IA por mês</Li>
+                  <Li>100 mensagens por dia via Whatsapp</Li>
+                  <Li>Dashboard Analytics</Li>
                 </Lista>
 
                 <Preco>
                   <Small>Por apenas</Small>
                   <Span>
                     <Small>R$</Small>
-                    <Strong>X.XXX</Strong>
-                    <Small>xx</Small>
+                    <Strong>799.</Strong>
+                    <Small>00</Small>
                   </Span>
                 </Preco>
               </DivPlanos>
@@ -122,12 +121,11 @@ const PlanosAssinaturas = () => {
                 </Box>
 
                 <Lista>
-                  <Li>ChatBot integração com AI</Li>
-                  <Li>Análise de Sentimentos </Li>
                   <Li>Mineração de Leads</Li>
-                  <Li>Integração da Base de Clientes</Li>
-                  <Li>Sugestões de BI</Li>
-                  <Li>5 milhões de tokens por mês </Li>
+                  <Li>IA com Criação de Textos</Li>
+                  <Li>IA com Criação de Imagens</Li>
+                  <Li>Envio de Mensagens Whatsapp</Li>
+                  <Li>Dashboard Analytics</Li>
                 </Lista>
 
                 <Preco>
