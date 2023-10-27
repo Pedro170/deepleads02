@@ -166,7 +166,7 @@ const Negocio = () => {
               <Div className="texto-preco">
                 <Div>
                   <P>Leads minerados</P>
-                  <Span>1.456</Span>
+                  <Span>12.650</Span>
                 </Div>
               </Div>
 
@@ -175,7 +175,7 @@ const Negocio = () => {
               </Div>
 
               <Small className="informacoes">
-                <Span>+6,5%</Span> <Span>aumento de lucro</Span>
+                <Span>+8,25%</Span> <Span>no aumento de lucros</Span>
               </Small>
             </ItemBox>
 
@@ -183,7 +183,7 @@ const Negocio = () => {
               <Div className="texto-preco">
                 <Div>
                   <P>Leads por bairro</P>
-                  <Span>1.456</Span>
+                  <Span>500</Span>
                 </Div>
               </Div>
 
@@ -192,7 +192,7 @@ const Negocio = () => {
               </Div>
 
               <Small className="informacoes">
-                <Span>+6,5%</Span> <Span>aumento de lucro</Span>
+                <Span>+4,5%</Span> <Span>aumento de lucro</Span>
               </Small>
             </ItemBox>
 
@@ -200,7 +200,7 @@ const Negocio = () => {
               <Div className="texto-preco">
                 <Div>
                   <P>Perguntas Realizadas</P>
-                  <Span>1.456</Span>
+                  <Span>3.456</Span>
                 </Div>
               </Div>
 
@@ -209,7 +209,7 @@ const Negocio = () => {
               </Div>
 
               <Small className="informacoes">
-                <Span>+6,5%</Span> <Span>aumento de lucro</Span>
+                <Span>+9,5%</Span> <Span>no aumento da taxa de sucesso das empresas</Span>
               </Small>
             </ItemBox>
 
@@ -217,7 +217,7 @@ const Negocio = () => {
               <Div className="texto-preco">
                 <Div>
                   <P>Mensagens Enviadas</P>
-                  <Span>1.456</Span>
+                  <Span>9.456</Span>
                 </Div>
               </Div>
 
@@ -226,7 +226,7 @@ const Negocio = () => {
               </Div>
 
               <Small className="informacoes">
-                <Span>+6,5%</Span> <Span>aumento de lucro</Span>
+                <Span>+8,75%</Span> <Span>aumento de lucro</Span>
               </Small>
             </ItemBox>
           </CGrid>
@@ -350,35 +350,35 @@ const Negocio = () => {
 
               <Tbody>
                 <Tr className="tr-body">
-                  <Td>Nome</Td>
-                  <Td>London</Td>
-                  <Td>22.08.22</Td>
-                  <Td>Cancelada</Td>
-                  <Td>R$ 920</Td>
+                  <Td>Celso Motos</Td>
+                  <Td>Motorcycle repair shop</Td>
+                  <Td>Guarujá</Td>
+                  <Td>12B</Td>
+                  <Td>2800</Td>
                 </Tr>
 
                 <Tr className="tr-body">
-                  <Td>Nome</Td>
-                  <Td>London</Td>
-                  <Td>22.08.22</Td>
-                  <Td>Cancelada</Td>
-                  <Td>R$ 920</Td>
+                  <Td>Churrascaria 3 Irmãos</Td>
+                  <Td>Barbecue restaurant</Td>
+                  <Td>Guarujá</Td>
+                  <Td>Vicente Joaquim</Td>
+                  <Td>3200</Td>
                 </Tr>
 
                 <Tr className="tr-body">
-                  <Td>Nome</Td>
-                  <Td>London</Td>
-                  <Td>22.08.22</Td>
-                  <Td>Cancelada</Td>
-                  <Td>R$ 920</Td>
+                  <Td>Oficina Bike</Td>
+                  <Td>Bicicletaria</Td>
+                  <Td>São Paulo</Td>
+                  <Td>Nova Morada</Td>
+                  <Td>1242</Td>
                 </Tr>
 
                 <Tr className="tr-body">
-                  <Td>Nome</Td>
-                  <Td>London</Td>
-                  <Td>22.08.22</Td>
+                  <Td>Auto Elétrica Montenegro</Td>
+                  <Td>Autoelétrico</Td>
+                  <Td>Marechal 12</Td>
                   <Td>Cancelada</Td>
-                  <Td>R$ 920</Td>
+                  <Td>423</Td>
                 </Tr>
               </Tbody>
             </TableBox>

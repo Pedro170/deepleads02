@@ -45,7 +45,7 @@ const Leads = () => {
     try {
       setError(null);
       setLoading(true);
-      const response = await fetch(`${BASE_MINERAR_DEV}${data.id}&maxPersistenceSize=5&maxLeadsListSize=15`, {
+      const response = await fetch(`${BASE_MINERAR_DEV}${data.id}&maxPersistenceSize=15&maxLeadsListSize=19`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -53,7 +53,7 @@ const Leads = () => {
         body: JSON.stringify({
           url: "https://www.google.com.br/maps",
           typeSearch: "MAPSGOOGLE",
-          keys: `Cidade do ${cidade} ${nicho} ${alcance} ${maisInformacoes}`,
+          keys: `Cidade do ${cidade} ${nicho}`,
         }),
       })
  

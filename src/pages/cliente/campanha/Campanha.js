@@ -80,7 +80,7 @@ const Campanha = () => {
       setErro(null);
       setLoading(true);
 
-      const response = await fetch(`${BASE_DISPARAR_CAMPANHA}`,
+      const response = await fetch(`https://deepleads-apiv1.azurewebsites.net/api/whatsapp/send/message`,
         {
           method: "POST",
           headers: {
