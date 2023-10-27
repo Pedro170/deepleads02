@@ -332,3 +332,18 @@ export const SectionLogado = styled.div`
 export const Button = styled.button`
   border: none;
 `;
+
+export const TextareaContato = styled.textarea`
+background: ${(props) => props.background};
+    border:none;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.10);
+    border-radius: 10px;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    resize: none;
+    &:placeholder { color: #4b4b4b }
+    font-size: 1.25rem;
+    outline:none;
+    background: #CDCDCD;
+`;

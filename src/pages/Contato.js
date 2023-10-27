@@ -12,6 +12,7 @@ import {
   Section,
   Span,
   TituloPrincipal,
+  TextareaContato,
 } from "../styles/tags";
 import Input from "../components/form/input/Input";
 import Button from "../components/form/button/Button";
@@ -77,13 +78,8 @@ const Contato = () => {
               </InputGroup>
 
               <InputGroup background="#CDCDCD" border="solid 1px #C3C3C3">
-                <Textarea
-                  style={{
-                    background: '#CDCDCD',
-                    color: '#4b4b4b',
-                    borderRadius: '10px',
-                    placeholderColor: '#2171AC',
-                  }}
+                <TextareaContato
+                  
                   placeholder="Descreva..."
                 />
 
