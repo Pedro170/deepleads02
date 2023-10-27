@@ -16,6 +16,7 @@ import {
 import Input from "../components/form/input/Input";
 import Button from "../components/form/button/Button";
 import { InputGroup } from "../components/form/input/InputStyled";
+import Textarea from "../components/form/textarea/Textarea";
 
 const Contato = () => {
   return (
@@ -75,14 +76,17 @@ const Contato = () => {
                 />
               </InputGroup>
 
-              <InputGroup background="#CDCDCD">
-                <textarea
-                  className="input-style" // Add a CSS class for styling
-                  placeholder="Descrição"
-                  rows={5}
-                  cor="#4b4b4b"
-                  corplaceholdereholder="#4b4b4b"
+              <InputGroup background="#CDCDCD" border="solid 1px #C3C3C3">
+                <Textarea
+                  style={{
+                    background: '#CDCDCD',
+                    color: '#4b4b4b',
+                    borderRadius: '10px',
+                    placeholderColor: '#2171AC',
+                  }}
+                  placeholder="Descreva..."
                 />
+
               </InputGroup>
 
               <Button
