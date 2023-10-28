@@ -16,7 +16,7 @@ export const ContainerGrid = styled.div`
   }
 
   @media (max-width: 768px) {
-    padding: 20px 0; // Reduza o espaçamento interno em telas menores
+    padding: 1rem;
     margin-bottom: 30px; // Reduza a margem inferior em telas menores
     h1 {
       font-size: 1.5rem; // Reduza o tamanho da fonte em telas menores
