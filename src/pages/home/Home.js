@@ -104,7 +104,7 @@ export const DivSectionCards = styled.div`
     grid-template-columns: 1fr 1fr;
   }
   gap: 2rem; /* Add gap between elements */
-  box-shadow: 0px 10px 30px 2px rgba(0, 0, 0, 0.1); /* Add drop shadow here */
+
 `;
 
 
@@ -125,11 +125,19 @@ export const DivSectionReasons = styled.div`
   @media (max-width: 490px) {
     grid-template-columns: 1fr;
   }
-  box-shadow: 0px 10px 30px 2px rgba(0, 0, 0, 0.1); /* Add drop shadow here */
 `;
 
 
 const Home = () => {
+
+  const redirectToPlansPage = () => {
+    // Substitua '/planos' pela URL da página de planos
+    window.location.href = '/planos';
+  }
+  const redirectToLogin = () => {
+    // Substitua '/login' pela URL da tela de login
+    window.location.href = '/login';
+  }
   return (
     <Section>
       <ContainerGrid
@@ -198,6 +206,7 @@ const Home = () => {
                   borderRadius: "3.125rem",
                   background: "#388DCC",
                 }}
+                onClick={redirectToLogin}
               />
               <Button
                 texto="SAIBA MAIS..."
@@ -209,6 +218,7 @@ const Home = () => {
                   borderRadius: "3.125rem",
                   background: "#FFFFFF",
                 }}
+                onClick={redirectToPlansPage}
               />
             </Div>
           </Div>
@@ -277,7 +287,7 @@ const Home = () => {
         >
           Explore todo o potencial da nossa
         </P>
-        <P
+        {/* <P
           style={{
             color: "#388DCC",
             fontSize: "1.5rem",
@@ -286,7 +296,7 @@ const Home = () => {
           }}
         >
           Inteligência Artificial e desenvolva novas campanhas para o seu negócio 
-        </P>
+        </P> */}
 
         <DivContent>
           <Img

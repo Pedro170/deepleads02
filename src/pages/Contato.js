@@ -59,6 +59,14 @@ const Contato = () => {
 
           <Box>
             <Form>
+            <InputGroup background="#CDCDCD">
+                <Input
+                  placeholder="Email"
+                  type="text"
+                  cor="#4b4b4b"
+                  corplaceholdereholder="#4b4b4b"
+                />
+              </InputGroup>
               <InputGroup background="#CDCDCD">
                 <Input
                   placeholder="Nome"
@@ -79,10 +87,8 @@ const Contato = () => {
 
               <InputGroup background="#CDCDCD" border="solid 1px #C3C3C3">
                 <TextareaContato
-                  
                   placeholder="Descreva..."
                 />
-
               </InputGroup>
 
               <Button
